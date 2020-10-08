@@ -85,5 +85,6 @@ minél kevesebb betanulást igényeljen a használata.
 
 - A weboldal legyen intuitív, egyszerűen használható.
 - A weboldal felhasználói felülete legyen reszponzív.
+- A weboldal legyen reaktív.
 - A szerver képes legyen futni bármilyen népszerű operációs rendszeren
 (GNU+Linux, MacOS, Windows).
