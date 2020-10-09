@@ -25,7 +25,11 @@ Ebbe vezetjük fel a milyen alaktrész pótlások cserélések szükségesek. A
 következő műszakivizsga időpontja is itt van feltüntetve. Nehéz nyomonkövetni a 
 prioirtást élvező szervizeket. Biztosítás is papír alapon követjük nyomon.
 
+## Autóbeszerzés
 
+A szükséges időközönkénti autóbeszerzés és a rendszerbe való integrálás jelenleg
+nehézkes, mert sokszor helyhiány miatt újra és újra kell írni bizonyos oldalakat
+és nyílvántartásokat.
 
 # Igényelt üzleti folyamatok
 
