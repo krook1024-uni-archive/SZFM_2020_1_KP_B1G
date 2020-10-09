@@ -6,6 +6,12 @@ Jelenleg papír alapú nyilvántartással és könyveléssel dolgozik a cégünk
 papír között nehéz az információkat továbbítani, párhuzamosan vizsgálni, 
 feldolgozni őket.
 
+## Ügyfélkezelés
+
+Jelenleg az ügyfelek személyesen vagy telefonon keresztül tudnak, kölcsönözni 
+járművet. Ügyfeleink kölcsönzéseinek adatait egy füzetbe vezetvet könyveljük. 
+Régi és új ügyfél között nem teszünk különbséget. 
+
 
 # Igényelt üzleti folyamatok
 
