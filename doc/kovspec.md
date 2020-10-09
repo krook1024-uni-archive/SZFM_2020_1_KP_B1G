@@ -1,5 +1,12 @@
 # Jelenlegi üzleti folyamatok modellje
 
+## Bevezetés
+
+Jelenleg papír alapú nyilvántartással és könyveléssel dolgozik a cégünk. A sok 
+papír között nehéz az információkat továbbítani, párhuzamosan vizsgálni, 
+feldolgozni őket.
+
+
 # Igényelt üzleti folyamatok
 
 ## Bevezető
