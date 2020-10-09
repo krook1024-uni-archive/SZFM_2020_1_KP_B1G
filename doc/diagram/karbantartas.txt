@@ -1,0 +1,10 @@
+title Karbantartás
+
+participant Adminsztrátor
+participant Weboldal (admin felület)
+
+participant Autó
+
+Weboldal (admin felület)->Autó: Tárolja a szükségleteket.
+Adminsztrátor->Weboldal (admin felület):Adott autó szükségleteit módosíthatja.
+Weboldal (admin felület)->Adminsztrátor:Listázza az autók szükségleteit.
