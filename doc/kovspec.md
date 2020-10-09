@@ -10,7 +10,14 @@ feldolgozni őket.
 
 Jelenleg az ügyfelek személyesen vagy telefonon keresztül tudnak, kölcsönözni 
 járművet. Ügyfeleink kölcsönzéseinek adatait egy füzetbe vezetvet könyveljük. 
-Régi és új ügyfél között nem teszünk különbséget. 
+Régi és új ügyfél között nem teszünk különbséget.
+
+## Kölcsönzés
+
+Kölcsönzési igényt, személyesen vagy telefonon keresztül lehetséges. A 
+kölcsönzéshez személyigazolvány illetve jogosítvény szükséges, továbbá egy 
+szerződés 2 példányban való aláírása. 
+
 
 
 # Igényelt üzleti folyamatok
