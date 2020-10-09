@@ -18,6 +18,13 @@ Kölcsönzési igényt, személyesen vagy telefonon keresztül lehetséges. A
 kölcsönzéshez személyigazolvány illetve jogosítvény szükséges, továbbá egy 
 szerződés 2 példányban való aláírása. 
 
+## Karbantartás
+
+A járműveink karbantartása is papír alapú nyilvántartással rendelkezik. 
+Ebbe vezetjük fel a milyen alaktrész pótlások cserélések szükségesek. A 
+következő műszakivizsga időpontja is itt van feltüntetve. Nehéz nyomonkövetni a 
+prioirtást élvező szervizeket. Biztosítás is papír alapon követjük nyomon.
+
 
 
 # Igényelt üzleti folyamatok
