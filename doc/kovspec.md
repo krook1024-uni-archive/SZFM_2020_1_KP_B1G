@@ -83,6 +83,11 @@ minél kevesebb betanulást igényeljen a használata.
 
 # Rendszerre vonatkozó szabályok
 
+## Törvények, szabályok
+
+Felhasználói adatok védelmére vonatkozó irányelvek betartása.
+A Cookie-kra vonatkozó kormányzati rendelet betartása.
+
 # Követelménylista
 
 - A weboldal legyen intuitív, egyszerűen használható.
