@@ -1,0 +1,7 @@
+title Autóbeszerzés
+
+participant Adminisztártor
+participant Weboldal (admin felület)
+
+Adminisztártor->Weboldal (admin felület):Új autót vihet fel a rendszerbe.
+Weboldal (admin felület)->Adminisztártor:Listázza a már meglévő autókat.
