@@ -1,0 +1,11 @@
+title Céges kapcsolattartás
+
+participant Külső cég
+participantgroup 
+participant Weboldal
+participant Az ügyfél cége
+end
+
+
+Weboldal->Külső cég:Listázza a megfelelő elérhetőségeket megkeresések számára (telefonszám, e-mail).    
+Külső cég->Az ügyfél cége:A megadott elérhetőségeken keresztül megkeresheti.
