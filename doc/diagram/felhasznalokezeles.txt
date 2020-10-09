@@ -1,0 +1,15 @@
+title Felhasználókezelés
+
+actor Vendég #lightgreen
+participant Weboldal
+actor Felhasználó #red
+
+Vendég->Weboldal:Regisztrálhat, bejelentkezhet.
+
+Weboldal->Vendég:Listázza az elérhető autókat.
+
+Weboldal->Felhasználó:Listázza az elérhető autókat.
+
+Weboldal->Felhasználó:Lehetőség nyújt az autók bérlésére.
+
+Vendég-->>Felhasználó:Bejelentkezés után a Vendég felhasználóvá változik.
