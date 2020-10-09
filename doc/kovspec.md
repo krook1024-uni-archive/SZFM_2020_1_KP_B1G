@@ -154,6 +154,8 @@ A fentiek alapján szeretnénk hogy elkészüljön az oldal felhasználói és
 adminisztrátori része. Az adminisztrátor résznek egyszerűnek kell lennie, hogy
 minél kevesebb betanulást igényeljen a használata.
 
+# Rendszerre vonatkozó szabályok
+
 # Követelménylista
 
 - A weboldal legyen intuitív, egyszerűen használható.
