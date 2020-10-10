@@ -16,6 +16,27 @@
 
 ![img/ceges_kapcs.png](img/ceges_kapcs.png)
 
+# Képernyőtervek 
+
+A képernytervek a Figma nevű web-alapú szerkesztővel készültek. 
+Az alábbi tervek csak wireframe jellegűek, a projekt fő elrendezését határozzák meg, a kész dizájn ettől eltérő lehet.  
+
+## Kezdőlap
+
+![img/screen_design/cars-listed.png](img/screen_design/cars-listed.png)
+
+## Regisztráció 
+
+![img/screen_design/register.png](img/screen_design/register.png)
+
+## Belépés
+
+![img/screen_design/login.png](img/screen_design/login.png)
+
+## Autó bérlés 
+
+![img/screen_design/rent-car.png](img/screen_design/rent-car.png)
+
 # Fogalomszótár 
 
 ## Rendszerrel kapcsolatos fogalmak 
