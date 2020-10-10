@@ -1,3 +1,36 @@
+# Jelenlegi üzleti folyamatok modellje
+
+## Bevezetés
+
+Jelenleg papír alapú nyilvántartással és könyveléssel dolgozik a cégünk. A sok 
+papír között nehéz az információkat továbbítani, párhuzamosan vizsgálni, 
+feldolgozni őket.
+
+## Ügyfélkezelés
+
+Jelenleg az ügyfelek személyesen vagy telefonon keresztül tudnak, kölcsönözni 
+járművet. Ügyfeleink kölcsönzéseinek adatait egy füzetbe vezetvet könyveljük. 
+Régi és új ügyfél között nem teszünk különbséget.
+
+## Kölcsönzés
+
+Kölcsönzési igényt, személyesen vagy telefonon keresztül lehetséges. A 
+kölcsönzéshez személyigazolvány illetve jogosítvény szükséges, továbbá egy 
+szerződés 2 példányban való aláírása. 
+
+## Karbantartás
+
+A járműveink karbantartása is papír alapú nyilvántartással rendelkezik. 
+Ebbe vezetjük fel a milyen alaktrész pótlások cserélések szükségesek. A 
+következő műszakivizsga időpontja is itt van feltüntetve. Nehéz nyomonkövetni a 
+prioirtást élvező szervizeket. Biztosítás is papír alapon követjük nyomon.
+
+## Autóbeszerzés
+
+A szükséges időközönkénti autóbeszerzés és a rendszerbe való integrálás jelenleg
+nehézkes, mert sokszor helyhiány miatt újra és újra kell írni bizonyos oldalakat
+és nyílvántartásokat.
+
 # Vágyálom rendszer
 
 ## Bevezető
@@ -30,13 +63,13 @@ a rendszer minden számára elérhető funkcióját.
 
 ## Felhasználói / Admin felület
 
-Az alkalmazás megkülönböztet egy másik felhasználó típust (admin), a cég azon alkalmazottai
-számára akik majd a kölcsönzéseket, autókat fogják kezelni a rendszerben. Az admin felhasználók
-számára egy teljesen más felület lesz elérhető belépés után. Itt a cél nem az esztétikus megjelenés,
-hanem a könnyen kezelhetőség, átláthatóság. Ezen a felületen lehetőség lesz új autókat hozzadni,
-a meglévők adatait szerkeszteni, törölni autókat, illetve elérhetőek a felhasználálók bérlési kérelmei,
+Az alkalmazás megkülönböztet egy másik felhasználó típust (admin), a cég azon
+alkalmazottai számára akik majd a kölcsönzéseket, autókat fogják kezelni a
+rendszerben. Az admin felhasználók számára egy teljesen más felület lesz elérhető
+belépés után. Itt a cél nem az esztétikus megjelenés, hanem a könnyen kezelhetőség,
+átláthatóság. Ezen a felületen lehetőség lesz új autókat hozzadni, a meglévők
+adatait szerkeszteni, törölni autókat, illetve elérhetőek a felhasználálók bérlési kérelmei,
 régebbi bérlésekről származó statisztikáik. 
-
 
 # Igényelt üzleti folyamatok
 
@@ -46,7 +79,7 @@ Jelenlegi rendszerünkben a nyilvántartás és a könyvelés papír alapú. Az 
 autók szervizintervallumait és a bérlési dátumokat ezzel a rendszerrel követni
 nehéz. A kéréseink alább vannak listázva és azt taglalják, hogy mit várunk el a
 rendszertől, hogy a munkánkat egyszerűbbé tudja tenni.
-
+ 
 A pontok gyakoriság szerint csökkenő sorrendben vannak.
 
 ## Felhasználókezelés
