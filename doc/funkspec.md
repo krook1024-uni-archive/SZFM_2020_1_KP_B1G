@@ -37,6 +37,25 @@ Az alábbi tervek csak wireframe jellegűek, a projekt fő elrendezését határ
 
 ![img/screen_design/rent-car.png](img/screen_design/rent-car.png)
 
+# Követelménylista
+
+Az ügyfél a következőket követeli.
+
+## Felhasználói interfész
+
+1. Felhasználók létrehozása, bejelentkezés.
+2. Autók listázása.
+3. Autók bérlésének lehetősége megadott szabályokkal.
+4. ...
+
+## Admin interfész
+
+1. Autók CRUD.
+2. Autók szervízlapja.
+3. Felhasználók CRUD.
+4. Bérlések CRUD.
+5. ...
+
 # Fogalomszótár 
 
 ## Rendszerrel kapcsolatos fogalmak 
