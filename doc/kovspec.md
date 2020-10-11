@@ -159,7 +159,9 @@ minél kevesebb betanulást igényeljen a használata.
 ## Törvények, szabályok
 
 Felhasználói adatok védelmére vonatkozó irányelvek betartása.
-A Cookie-kra vonatkozó kormányzati rendelet betartása.
+Az EU, GDPR rendelkezéseinek betartása a személyes adatok védelmében.
+[Teljes GDPR dokumentum](https://eur-lex.europa.eu/legal-content/HU/TXT/HTML/?uri=CELEX:32016R0679&from=HU)
+A sütikre vonatkozó kormányzati rendelet betartása.
 
 # Követelménylista
 
