@@ -1,0 +1,15 @@
+title Felhasználókezelés
+
+actor Vendég #lightgreen
+participant Személyes jelenlét/Telefon
+actor Cég #red
+
+Vendég->Cég:Kérés közlése
+Cég->Vendég: Kérés teljesítése
+
+
+
+
+
+
+
