@@ -1,4 +1,4 @@
-# Jelenlegi üzleti folyamatok modellje
+# Jelenlegi helyzet
 
 ## Bevezetés
 
