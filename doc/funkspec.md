@@ -39,14 +39,14 @@ Az alábbi tervek csak wireframe jellegűek, a projekt fő elrendezését határ
 
 # Követelménylista
 
-Az ügyfél a következőket követeli.
+Az ügyfél a következő kérésekkel van felénk.
 
 ## Felhasználói interfész
 
 1. Felhasználók létrehozása, bejelentkezés.
 2. Autók listázása.
 3. Autók bérlésének lehetősége megadott szabályokkal.
-4. ...
+4. Kapcsolat statikus oldal megjelenítése.
 
 ## Admin interfész
 
@@ -54,7 +54,6 @@ Az ügyfél a következőket követeli.
 2. Autók szervízlapja.
 3. Felhasználók CRUD.
 4. Bérlések CRUD.
-5. ...
 
 # Fogalomszótár 
 
@@ -111,5 +110,8 @@ Forrás: [https://en.wikipedia.org/wiki/React_(web_framework)](https://en.wikipe
 **Reszponzív weboldal:** A reszponzív weboldal (RWD) egy olyan megközelítéssel tervezett weboldal, amelynek
 a célja az, hogy optimális megjelenést biztosítson - könnyű olvashatóság, egyszerű navigáció a lehető legkevesebb
 átméretezéssel és görgetéssel - a legkülönfélébb eszközökön.
+
+**CRUD:** Create, Read, Update, Delete:
+https://en.wikipedia.org/wiki/Create,_read,_update_and_delete
 
 Forrás: [https://hu.wikipedia.org/wiki/Reszponz%C3%ADv_weboldal](https://hu.wikipedia.org/wiki/Reszponz%C3%ADv_weboldal)
