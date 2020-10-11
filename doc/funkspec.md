@@ -55,6 +55,22 @@ Az ügyfél a következő kérésekkel van felénk.
 3. Felhasználók CRUD.
 4. Bérlések CRUD.
 
+# Megfeleltetés, hogyan fedik le a funkciók a követelményeket
+
+```
+F_n: felhasználói interfész funkciói
+A_n: felhasználói interfész funkciói
+```
+
+- F1 lefedi a felhasználókezelés első felét.
+- F2 lefedi az autók kezelését.
+- F3 lefedi az autók bérlését.
+- F4 lefedi a céges kapcsolattartás részt.
+- A1 lefedi az autókkal kapcsolatos kéréseket.
+- A2 lefedi az autók szükségleteinek nyilvántartását.
+- A3 lefedi a felhasználókkezelés második felét.
+- A4 lefedi a bérlések kezelését.
+
 # Fogalomszótár 
 
 ## Rendszerrel kapcsolatos fogalmak 
