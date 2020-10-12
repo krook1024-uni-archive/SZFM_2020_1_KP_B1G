@@ -4,7 +4,7 @@
 
 ![img/funkspec_felhasznalokezeles.png](./img/funkspec_felhasznalokezeles.png)
 
-## Szervizeltetés autó beszerzés
+## Szervizeltetés, autó beszerzés
 
 ![img/funkspec_szerviz_beszerz.png](./img/funkspec_szerviz_beszerz.png)
 
