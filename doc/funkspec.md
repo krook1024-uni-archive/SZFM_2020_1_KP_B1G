@@ -1,3 +1,7 @@
+# Jelenlegi helyzet
+
+
+
 # Igényelt üzleti folyamatok modellje
 
 ## Felhasználókezelés 
