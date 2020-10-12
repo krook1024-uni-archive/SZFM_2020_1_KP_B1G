@@ -1,7 +1,16 @@
 pull_request_rules:
-  - name: Automatic merge on approval
+  - name: Automatic merge on aproval of 3 reviewers
     conditions:
-      - "#approved-reviews-by>=1"
+      - label="3 reviews needed"
+      - "#approved-reviews-by>=3"
     actions:
       merge:
         method: merge
+  - name: Automatic merge on approval of 1 reviwer
+    conditions:
+      - "#approved-reviews-by>=1"
+      - label!="3 reviews needed"
+    actions:
+      merge:
+        method: merge
+
