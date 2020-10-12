@@ -2,6 +2,8 @@
 
 ## Felhasználó kezelés
 
+![img/funkspec_felhasznalokezeles.png](./img/funkspec_felhasznalokezeles.png)
+
 ## Karbantartás
 
 ## Autóbeszerzés
