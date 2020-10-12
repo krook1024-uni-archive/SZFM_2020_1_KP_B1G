@@ -1,6 +1,6 @@
 # Jelenlegi helyzet
 
-
+A [követelmény specifikációban](./kovspec.md) részletesen ki lett fejtve
 
 # Igényelt üzleti folyamatok modellje
 
