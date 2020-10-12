@@ -1,5 +1,11 @@
 # Jelenlegi üzleti folyamatok modellje
 
+## Felhasználó kezelés
+
+## Karbantartás
+
+## Autóbeszerzés
+
 # Igényelt üzleti folyamatok modellje
 
 ## Felhasználókezelés 
