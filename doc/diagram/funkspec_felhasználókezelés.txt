@@ -1,0 +1,16 @@
+title Felhasználókezelés
+
+actor Ügyfél #lightgreen
+participant Cég
+
+Ügyfél->Cég:Telefonos foglalás, információ kérés.
+
+Ügyfél->Cég:Személyes foglalás, információ kérés.
+
+Cég->Ügyfél:Szükséges iratok elkérése
+
+Ügyfél->Cég: Szükséges papírok átadása
+
+Cég->Ügyfél:Elérhető autókat prezentálása.
+
+Cég->Ügyfél:Foglalás teljesítése, bérbeadás
