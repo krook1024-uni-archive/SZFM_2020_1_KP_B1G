@@ -1,0 +1,20 @@
+title Szervizeltetés & Járműbeszerzés
+
+actor Ügyfél #lightgreen
+participant Cég
+participant Szervíz
+participant Nepper
+
+Ügyfél->Cég:Hiba észrevétel jelzése
+
+Cég->Szervíz:Adott jármű átadása, javításra
+
+Cég->Szervíz: Adott jármű átadása, műszaki vizsgára
+
+Szervíz ->Cég:Szervizelt autó átadása
+
+Cég->Ügyfél:Autó elérhetővé tétele
+
+Cég ->Nepper: Igény leadása új járműre
+
+Nepper ->Cég: Új jármű átadása
