@@ -4,9 +4,9 @@
 
 ![img/funkspec_felhasznalokezeles.png](./img/funkspec_felhasznalokezeles.png)
 
-## Karbantartás
+## Szervizeltetés autó beszerzés
 
-## Autóbeszerzés
+![img/funkspec_szerviz_beszerz.png](./img/funkspec_szerviz_beszerz.png)
 
 # Igényelt üzleti folyamatok modellje
 
