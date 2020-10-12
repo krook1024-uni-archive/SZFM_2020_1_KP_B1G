@@ -1,5 +1,7 @@
 # Rendszerre vonatkozó szabályok, rendeletek
 
+A [követelmény specifikációban](./kovspec.md) részletesen ismertettük
+
 # Igényelt üzleti folyamatok modellje
 
 ## Felhasználókezelés 
