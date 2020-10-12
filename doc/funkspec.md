@@ -1,6 +1,4 @@
-# Jelenlegi helyzet
-
-
+# Rendszerre vonatkozó szabályok, rendeletek
 
 # Igényelt üzleti folyamatok modellje
 
