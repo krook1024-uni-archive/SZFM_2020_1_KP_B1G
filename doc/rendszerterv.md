@@ -17,3 +17,6 @@ való fejlesztés.
 
 # Modellek
 
+![img/maintanence.png](./img/maintanence.png)
+
+![img/software_upgrade.png](./img/software_upgrade.png)
