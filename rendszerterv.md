@@ -9,3 +9,8 @@ Támogatott platformok:
 - MacOS
 - Andorid
 - iOS
+
+## Hardver
+
+Olyan hardver szükséges ami a modern böngészöket képes futtatni.
+
