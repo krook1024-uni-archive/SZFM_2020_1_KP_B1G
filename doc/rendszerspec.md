@@ -102,6 +102,27 @@ Ezzel lehetőség nyílik arra, hogy a kollekciókhoz sémákat rendeljünk hozz
 	    }
     });
 
+**Rent Séma**
+
+    const RentSchema = new mongoose.Schema({
+	    cardId: {
+		    type: mongoose.ObjectId, 
+		    required: true
+	    },
+	    userId: {
+	    	type: mongoose.ObjectId,
+		    required: true
+	    },
+	    startTime: {
+	      	type: Date,
+		    required: true
+	    },
+	    finishTime: {
+	    	type: Date,
+		    required: true
+	    }
+    });
+
 # Telepítési terv
 
 # Tesztterv
