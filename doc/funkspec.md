@@ -26,6 +26,25 @@
 
 ![img/ceges_kapcs.png](img/ceges_kapcs.png)
 
+# Vágyálom rendszer
+
+A rendszernek tudnia kell különbséget tenni egyszerű vendég, regisztrált felhasználó
+illetve admin felület között. Mindegyik felhasználási módnak különböző felület kell,
+és külön felhasználási köreiknek kell lennie.
+
+Az egyszerű vendég könnyen átláthatja a weboldalt, a gépjárművekről láthat alapvető
+információkat, bővebb részleteket nem lát.
+
+Az a felhasználó aki kiváncsi a pontosabb/részletesebb információkra és adatokra
+annak szükséges regisztrálnia egy külön felületen keresztül, bizonyos adatok megadásával.
+Amint a felhasználó regisztrál, vendégből felhasználó lesz, és több funkciót ér
+el mint a vendég, viszont kevesebbet mint az admin.
+
+Az alkalmazottaink számára szükséges létrehozni egy teljesen különálló felületet,
+melyet "admin felület"-nek nevezünk. Itt szükséges, hogy képesek legyenek kezelni
+a nyilvántartásokat, egyes gépjárművek karbantartási információit, illetve a
+kölcsönzéseket.
+
 # Képernyőtervek
 
 A képernytervek a Figma nevű web-alapú szerkesztővel készültek.
