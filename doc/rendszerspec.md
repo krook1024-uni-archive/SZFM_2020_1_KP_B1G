@@ -35,6 +35,16 @@ funkcionalitást.
 
 # Adatbázis terv
 
+## Bevezetés
+
+Az alkalmazás adatainak tárolására a MongoDB nevű adatbázist fogjuk használni.
+A MongoDB egy flexibilis, jó skálázhatósággal rendelkező NoSQL  adatbázis. 
+Az adatokat JSON-höz hasonló dokumentumokban tárolja, az adatok 
+struktúrája
+szempontjából nagyobb rugalmasságot biztosít, mint egy SQL adatbázis, 
+ugyanis nincs szükség előre definiálni a táblákat, ezek közötti kapcsolatokat. 
+
+
 # Telepítési terv
 
 # Tesztterv
