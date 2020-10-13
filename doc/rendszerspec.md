@@ -78,7 +78,19 @@ Ezzel lehetőség nyílik arra, hogy a kollekciókhoz sémákat rendeljünk hozz
 	    licenseCategory: {
 		    type: String,
 		    required: true
-	    }
+	    },
+        createdAt: {
+            type: Date, 
+            default: Date.now()
+        },
+        updatedAt: {
+            type: Date,
+            required: false
+        },
+        deletedAt: {
+            type: Date,
+            required: false
+        }
     });
 
 **Car Séma**
@@ -99,7 +111,19 @@ Ezzel lehetőség nyílik arra, hogy a kollekciókhoz sémákat rendeljünk hozz
 	    productionYear: {
 		    type: Date,
 		    required: true
-	    }
+	    },
+        createdAt: {
+            type: Date, 
+            default: Date.now()
+        },
+        updatedAt: {
+            type: Date,
+            required: false
+        },
+        deletedAt: {
+            type: Date,
+            required: false
+        }
     });
 
 **Rent Séma**
