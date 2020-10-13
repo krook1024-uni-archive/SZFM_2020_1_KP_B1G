@@ -88,7 +88,7 @@ Ezzel lehetőség nyílik arra, hogy a kollekciókhoz sémákat rendeljünk hozz
 		    type: String,
 		    required: true
 	    },
-	    manufacturer: {
+	    make: {
 		    type: String,
 		    required: true
 	    },
@@ -105,7 +105,7 @@ Ezzel lehetőség nyílik arra, hogy a kollekciókhoz sémákat rendeljünk hozz
 **Rent Séma**
 
     const RentSchema = new mongoose.Schema({
-	    cardId: {
+	    carId: {
 		    type: mongoose.ObjectId, 
 		    required: true
 	    },
