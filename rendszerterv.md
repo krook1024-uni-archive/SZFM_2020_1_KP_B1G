@@ -10,7 +10,8 @@
 
 ## Hardver
 
-Az alkalmazás platform független webalkalmazás. 
+Az alkalmazás platform független webalkalmazás.
+Olyan hardver szükséges ami a modern böngészöket képes futtatni.
 Támogatott platformok: 
 - Windows
 - Linux
@@ -18,12 +19,15 @@ Támogatott platformok:
 - Andorid
 - iOS
 
-Olyan hardver szükséges ami a modern böngészöket képes futtatni.
-
 ## Halózat, tűzfal
 
 Külön hálózati beállításokat nem igényel az alkalmazás. 
 A böngésző kezel mindent.
 
-## Fejlesztő környezet
+## Fejlesztő eszközök
 
+## Keretrendszer
+
+Alkalmazásunk az alábbi keretrendszereket használja:
+* React
+* laravel
