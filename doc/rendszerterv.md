@@ -1,15 +1,16 @@
 # Fizikai környezet
 
 ## Platform
-
-* Javascript
-* Php
 * React
 * Express
 * MongoDB
 
 ## Hardver
 
+**Szerver hardver igény:**
+A szerver NodeJS 12.x vagy nagyobb elérhető
+
+**Felhasználásói hardver igény:**
 Az alkalmazás platform független webalkalmazás.
 Olyan hardver szükséges ami a modern böngészöket képes futtatni.
 Támogatott platformok: 
@@ -26,8 +27,15 @@ A böngésző kezel mindent.
 
 ## Fejlesztő eszközök
 
+* Visual Code - kódírás, szövegszerkesztés
+* Prettier - formázó eszköz
+* VS Plugins:
+  * ES7
+  * ES6
+  * HTML Snippets
+
 ## Keretrendszer
 
 Alkalmazásunk az alábbi keretrendszereket használja:
-* React
-* laravel
+* React(Frontend)
+* Express(Backend)
