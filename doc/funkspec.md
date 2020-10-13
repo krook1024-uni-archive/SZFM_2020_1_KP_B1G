@@ -1,3 +1,12 @@
+# Rendszerre vonatkozó szabályok, rendeletek
+
+Felhasználói adatok védelmére vonatkozó irányelvek betartása.
+Az EU, GDPR rendelkezéseinek betartása a személyes adatok védelmében.
+[Teljes GDPR dokumentum](https://eur-lex.europa.eu/legal-content/HU/TXT/HTML/?uri=CELEX:32016R0679&from=HU)
+A sütikre vonatkozó kormányzati rendelet betartása.
+MVC szemléletmód használata.
+A szükséges programozási konvenciók betartása.
+
 # Jelenlegi üzleti folyamatok modellje
 
 ## Felhasználó kezelés
