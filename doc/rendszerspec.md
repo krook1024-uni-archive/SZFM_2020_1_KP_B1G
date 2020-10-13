@@ -37,7 +37,7 @@ funkcionalitást.
 
 ## Bevezetés
 
-Az alkalmazás adatainak tárolására a MongoDB nevű adatbázist fogjuk használni.
+Az alkalmazás adatainak tárolására a [MongoDB](https://www.mongodb.com/) nevű adatbázist fogjuk használni.
 A MongoDB egy flexibilis, jó skálázhatósággal rendelkező NoSQL  adatbázis. 
 Az adatokat JSON-höz hasonló dokumentumokban tárolja, az adatok 
 struktúrája
@@ -50,6 +50,12 @@ Az adatbázis három kollekciót fog tartalmazni, amik a következőek:
 + user - a felhasználók adatai 
 + car - a bérelhető autók adatai 
 + rent - a bérlések adatai 
+
+## Sémák 
+
+Az adatbázis kódban való kezelésére a [mongoose](https://mongoosejs.com/) NodeJS könyvtárat fogjuk használni. 
+Ezzel lehetőség nyílik arra, hogy a kollekciókhoz sémákat rendeljünk hozzá, ami nagyban megkönnyíti az adatbázisba való beillesztést. 
+
 
 
 # Telepítési terv
