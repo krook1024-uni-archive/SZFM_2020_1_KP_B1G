@@ -81,6 +81,26 @@ Ezzel lehetőség nyílik arra, hogy a kollekciókhoz sémákat rendeljünk hozz
 	    }
     });
 
+**Car Séma**
+
+    const CarSchema = new mongoose.Schema({
+	    plateNumber: {
+		    type: String,
+		    required: true
+	    },
+	    manufacturer: {
+		    type: String,
+		    required: true
+	    },
+	    model: {
+	    	type: String,
+		    required: true
+	    },
+	    productionYear: {
+		    type: Date,
+		    required: true
+	    }
+    });
 
 # Telepítési terv
 
