@@ -56,6 +56,30 @@ Az adatbázis három kollekciót fog tartalmazni, amik a következőek:
 Az adatbázis kódban való kezelésére a [mongoose](https://mongoosejs.com/) NodeJS könyvtárat fogjuk használni. 
 Ezzel lehetőség nyílik arra, hogy a kollekciókhoz sémákat rendeljünk hozzá, ami nagyban megkönnyíti az adatbázisba való beillesztést. 
 
+**User Séma**
+
+    const UserSchema = new mongoose.Schema({
+	    name: {
+		    type: String, 
+		   required: true
+	    },
+	    email: {
+		    type: String,
+		    required: true
+	    },
+	    password: {
+		    type: String,
+		    required: true
+	    },
+	    dateOfBirth: {
+		    type: Date,
+		    required: true
+	    },
+	    licenseCategory: {
+		    type: String,
+		    required: true
+	    }
+    });
 
 
 # Telepítési terv
