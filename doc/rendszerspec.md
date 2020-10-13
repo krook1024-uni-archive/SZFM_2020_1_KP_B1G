@@ -44,6 +44,13 @@ struktúrája
 szempontjából nagyobb rugalmasságot biztosít, mint egy SQL adatbázis, 
 ugyanis nincs szükség előre definiálni a táblákat, ezek közötti kapcsolatokat. 
 
+## Kollekciók 
+
+Az adatbázis három kollekciót fog tartalmazni, amik a következőek: 
++ user - a felhasználók adatai 
++ car - a bérelhető autók adatai 
++ rent - a bérlések adatai 
+
 
 # Telepítési terv
 
