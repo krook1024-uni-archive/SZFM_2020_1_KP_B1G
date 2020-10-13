@@ -1,3 +1,13 @@
+# Jelenlegi üzleti folyamatok modellje
+
+## Felhasználó kezelés
+
+![img/funkspec_felhasznalokezeles.png](./img/funkspec_felhasznalokezeles.png)
+
+## Szervizeltetés, autó beszerzés
+
+![img/funkspec_szerviz_beszerz.png](./img/funkspec_szerviz_beszerz.png)
+
 # Igényelt üzleti folyamatok modellje
 
 ## Felhasználókezelés
@@ -36,6 +46,40 @@ Az alábbi tervek csak wireframe jellegűek, a projekt fő elrendezését határ
 ## Autó bérlés
 
 ![img/screen_design/rent-car.png](img/screen_design/rent-car.png)
+
+# Követelménylista
+
+Az ügyfél a következő kérésekkel van felénk.
+
+## Felhasználói interfész
+
+1. Felhasználók létrehozása, bejelentkezés.
+2. Autók listázása.
+3. Autók bérlésének lehetősége megadott szabályokkal.
+4. Kapcsolat statikus oldal megjelenítése.
+
+## Admin interfész
+
+1. Autók CRUD.
+2. Autók szervízlapja.
+3. Felhasználók CRUD.
+4. Bérlések CRUD.
+
+# Megfeleltetés, hogyan fedik le a funkciók a követelményeket
+
+```
+F_n: felhasználói interfész funkciói
+A_n: felhasználói interfész funkciói
+```
+
+- F1 lefedi a felhasználókezelés első felét.
+- F2 lefedi az autók kezelését.
+- F3 lefedi az autók bérlését.
+- F4 lefedi a céges kapcsolattartás részt.
+- A1 lefedi az autókkal kapcsolatos kéréseket.
+- A2 lefedi az autók szükségleteinek nyilvántartását.
+- A3 lefedi a felhasználókkezelés második felét.
+- A4 lefedi a bérlések kezelését.
 
 # Forgatókönyvek
 
@@ -120,5 +164,8 @@ Forrás: [https://en.wikipedia.org/wiki/React_(web_framework)](https://en.wikipe
 **Reszponzív weboldal:** A reszponzív weboldal (RWD) egy olyan megközelítéssel tervezett weboldal, amelynek
 a célja az, hogy optimális megjelenést biztosítson - könnyű olvashatóság, egyszerű navigáció a lehető legkevesebb
 átméretezéssel és görgetéssel - a legkülönfélébb eszközökön.
+
+**CRUD:** Create, Read, Update, Delete:
+https://en.wikipedia.org/wiki/Create,_read,_update_and_delete
 
 Forrás: [https://hu.wikipedia.org/wiki/Reszponz%C3%ADv_weboldal](https://hu.wikipedia.org/wiki/Reszponz%C3%ADv_weboldal)
