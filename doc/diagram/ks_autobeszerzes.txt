@@ -1,0 +1,13 @@
+title Autóbeszerzés
+
+participant Autókezelő
+participant Nyilvántartás
+
+
+Autókezelő->Nyilvántartás:Autót vihet fel/autót vehet el a nyilvántartásból
+
+
+
+
+
+
