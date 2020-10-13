@@ -111,7 +111,7 @@ A_n: felhasználói interfész funkciói
 
 # Forgatókönyvek
 
-###Regisztráció:
+### Regisztráció:
 A felhasználó, miután sikeresen betöltötte a weboldalt, megteheti, hogy regisztrál
 az egy felhasználót a weboldalra, amit egy pár érvényes adattal tud megtenni, mint
 például: (név, e-mail cím, jelszó, jogosítvány kategória, születési év).
@@ -122,7 +122,7 @@ a fiókot, és el tudja érni azokat a funkciókat amit egy vendég nem tud.
 - Miután megadta az adatait és rákattint a regisztráció gombra, rendszerünk hibás
 adatot észlel, majd ezt a képernyőn közli is.
 
-###Belépés
+### Belépés
 Regisztráció után már nincs szükség több regisztrációra, csak a belépésre. Itt az
 e-mail-re illettve jelszóra van szükség.
 
@@ -133,7 +133,7 @@ rendszer nem észlel hibát és végezheti kívánt tevékenységét.
 rendszer eltérő adatot észlel a regisztrált adatoktól, és hibaüzenetet dob ki a
 képernyőre.
 
-###Autó bérlés
+### Autó bérlés
 A felhasználó sikeres belépés után igénybe veheti az autóbérlés szolgáltatásunkat,
 ahol kedvére nézheti és válogathat az autók közül.
 
