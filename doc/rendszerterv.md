@@ -14,3 +14,6 @@ addig amíg az új verzió elkászül. Az új verzió telepítése egy kevésbé
 időszakban.
 Amennyiben az aktuális verzió nem tartható működésben, akkor gyors, sprintben 
 való fejlesztés.
+
+# Modellek
+
