@@ -1,3 +1,12 @@
+# Rendszerre vonatkozó szabályok, rendeletek
+
+Felhasználói adatok védelmére vonatkozó irányelvek betartása.
+Az EU, GDPR rendelkezéseinek betartása a személyes adatok védelmében.
+[Teljes GDPR dokumentum](https://eur-lex.europa.eu/legal-content/HU/TXT/HTML/?uri=CELEX:32016R0679&from=HU)
+A sütikre vonatkozó kormányzati rendelet betartása.
+MVC szemléletmód használata.
+A szükséges programozási konvenciók betartása.
+
 # Jelenlegi üzleti folyamatok modellje
 
 ## Felhasználó kezelés
@@ -10,7 +19,7 @@
 
 # Igényelt üzleti folyamatok modellje
 
-## Felhasználókezelés 
+## Felhasználókezelés
 
 ![img/felhasznalokezeles.png](img/felhasznalokezeles.png)
 
@@ -26,16 +35,35 @@
 
 ![img/ceges_kapcs.png](img/ceges_kapcs.png)
 
-# Képernyőtervek 
+# Vágyálom rendszer
 
-A képernytervek a Figma nevű web-alapú szerkesztővel készültek. 
+A rendszernek tudnia kell különbséget tenni egyszerű vendég, regisztrált felhasználó
+illetve admin felület között. Mindegyik felhasználási módnak különböző felület kell,
+és külön felhasználási köreiknek kell lennie.
+
+Az egyszerű vendég könnyen átláthatja a weboldalt, a gépjárművekről láthat alapvető
+információkat, bővebb részleteket nem lát.
+
+Az a felhasználó aki kiváncsi a pontosabb/részletesebb információkra és adatokra
+annak szükséges regisztrálnia egy külön felületen keresztül, bizonyos adatok megadásával.
+Amint a felhasználó regisztrál, vendégből felhasználó lesz, és több funkciót ér
+el mint a vendég, viszont kevesebbet mint az admin.
+
+Az alkalmazottaink számára szükséges létrehozni egy teljesen különálló felületet,
+melyet "admin felület"-nek nevezünk. Itt szükséges, hogy képesek legyenek kezelni
+a nyilvántartásokat, egyes gépjárművek karbantartási információit, illetve a
+kölcsönzéseket.
+
+# Képernyőtervek
+
+A képernytervek a Figma nevű web-alapú szerkesztővel készültek.
 Az alábbi tervek csak wireframe jellegűek, a projekt fő elrendezését határozzák meg, a kész dizájn ettől eltérő lehet.  
 
 ## Kezdőlap
 
 ![img/screen_design/cars-listed.png](img/screen_design/cars-listed.png)
 
-## Regisztráció 
+## Regisztráció
 
 ![img/screen_design/register.png](img/screen_design/register.png)
 
@@ -43,7 +71,7 @@ Az alábbi tervek csak wireframe jellegűek, a projekt fő elrendezését határ
 
 ![img/screen_design/login.png](img/screen_design/login.png)
 
-## Autó bérlés 
+## Autó bérlés
 
 ![img/screen_design/rent-car.png](img/screen_design/rent-car.png)
 
@@ -81,18 +109,46 @@ A_n: felhasználói interfész funkciói
 - A3 lefedi a felhasználókkezelés második felét.
 - A4 lefedi a bérlések kezelését.
 
-# Fogalomszótár 
+# Forgatókönyvek
 
-## Rendszerrel kapcsolatos fogalmak 
+### Regisztráció:
+A felhasználó, miután sikeresen betöltötte a weboldalt, megteheti, hogy regisztrál
+az egy felhasználót a weboldalra, amit egy pár érvényes adattal tud megtenni, mint
+például: (név, e-mail cím, jelszó, jogosítvány kategória, születési év).
 
-**vendég felhasználó:** Olyan felhasználó, aki nincs regisztrálva a 
-rendszerben, csak korlátozott funkciókat ér el. 
+- Miután megadta az adatait és rákattint a regisztráció gombra, sikeresen létrehozza
+a fiókot, és el tudja érni azokat a funkciókat amit egy vendég nem tud.
+
+- Miután megadta az adatait és rákattint a regisztráció gombra, rendszerünk hibás
+adatot észlel, majd ezt a képernyőn közli is.
+
+### Belépés
+Regisztráció után már nincs szükség több regisztrációra, csak a belépésre. Itt az
+e-mail-re illettve jelszóra van szükség.
+
+- Miután beírta a felhasználó a saját adatait és rákattint a belépés gombra, a
+rendszer nem észlel hibát és végezheti kívánt tevékenységét.
+
+- Miután beírta a felhasználó a saját adatait és rákattint a belépés gombra, a
+rendszer eltérő adatot észlel a regisztrált adatoktól, és hibaüzenetet dob ki a
+képernyőre.
+
+### Autó bérlés
+A felhasználó sikeres belépés után igénybe veheti az autóbérlés szolgáltatásunkat,
+ahol kedvére nézheti és válogathat az autók közül.
+
+# Fogalomszótár
+
+## Rendszerrel kapcsolatos fogalmak
+
+**vendég felhasználó:** Olyan felhasználó, aki nincs regisztrálva a
+rendszerben, csak korlátozott funkciókat ér el.
 
 **admin:** A cég alkalmazottja, aki a rendszer admin felületén keresztül
 tudja kezelni a bérelhető autókat, leírásukat, illetve a felhasználók által
-leadott kölcsönzési kérelmeket. 
+leadott kölcsönzési kérelmeket.
 
-## Fejlesztéssel kapcsolatos fogalmak 
+## Fejlesztéssel kapcsolatos fogalmak
 
 **HTML:** A HTML (angolul: HyperText Markup Language=hiperszöveges jelölőnyelv)
 egy leíró nyelv, melyet weboldalak készítéséhez fejlesztettek ki, és mára már
@@ -103,7 +159,7 @@ Forrás: [https://hu.wikipedia.org/wiki/HTML](https://hu.wikipedia.org/wiki/HTML
 **Cross-Platform:** A platformfüggetlenség vagy többplatformosság, illetve multi-platform
 fogalma olyan számítógépes programokra, operációs rendszerekre, programozási nyelvekre
 vagy más számítógépes szoftverekre és implementációikra vonatkozik, amelyek több
-számítógépes platformon képesek működni. 
+számítógépes platformon képesek működni.
 
 Forrás: [https://hu.wikipedia.org/wiki/Platformf%C3%BCggetlens%C3%A9g](https://hu.wikipedia.org/wiki/Platformf%C3%BCggetlens%C3%A9g)
 
@@ -112,24 +168,24 @@ szkriptnyelv, amelyet weboldalakon elterjedten használnak.
 
 Forrás:[https://hu.wikipedia.org/wiki/JavaScript](https://hu.wikipedia.org/wiki/JavaScript)
 
-**Node.js**: A Node.js egy szoftverrendszer, melyet skálázható internetes alkalmazások, mégpedig 
+**Node.js**: A Node.js egy szoftverrendszer, melyet skálázható internetes alkalmazások, mégpedig
 webszerverek készítésére hoztak létre. A programok JavaScript-ben írhatók, eseményalapú, aszinkron
 I/O-val a túlterhelés minimalizálására és a skálázhatóság maximalizálására.
 
 Forrás: [https://hu.wikipedia.org/wiki/Node.js](https://hu.wikipedia.org/wiki/Node.js)
 
 **Express.js**: Az Express.js vagy Express nyílt forráskódú egy back-end keretrendszer Node.js-hez,
-amit web applikációk és API-k fejlesztésére használnak. 
+amit web applikációk és API-k fejlesztésére használnak.
 
 Forrás: [https://en.wikipedia.org/wiki/Express.js](https://en.wikipedia.org/wiki/Express.js)
 
 **MongoDB:** A MongoDB egy platformfüggetlen dokumetum-orientált NoSQL adatbázis, ami
-JSON szerű dokumentumokban tárolja az adatokat. 
+JSON szerű dokumentumokban tárolja az adatokat.
 
 Forrás: [https://en.wikipedia.org/wiki/MongoDB](https://en.wikipedia.org/wiki/MongoDB)
 
 **React:** A React (vagy ReactJS) egy open-source JavaScript keretrendszer, amit felhasználói felületek
-kiépítésére használnak. 
+kiépítésére használnak.
 
 Forrás: [https://en.wikipedia.org/wiki/React_(web_framework)](https://en.wikipedia.org/wiki/React_(web_framework))
 

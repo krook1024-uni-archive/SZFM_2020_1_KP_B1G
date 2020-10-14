@@ -1,0 +1,18 @@
+title Karbantartás
+
+participant Karbantartó
+participant Autó
+participant Nyilvántartás
+participant Bolt
+
+
+Karbantartó->Autó: Autó átviszgálása
+Autó->Nyilvántartás: Szükséges alkatrészek lejegyzése
+Nyilvántartás->Bolt:Szükséges alkatrészek megrendelése
+Bolt->Karbantartó:Szükséges alkatrészek leküldése
+
+
+
+
+
+

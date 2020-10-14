@@ -1,0 +1,10 @@
+title Szoftver frissítés
+
+actor Ügyfél #lightgreen
+participant Cég
+participant Support
+
+Cég ->Support: Új alkalmazás verzó igénye
+Support->Cég: Ajánlat tétel a fejlesztésre
+Support->Cég: Új alkalmazás verzió átadása
+Cég->Ügyfél: Új alkalmazás prezentálása

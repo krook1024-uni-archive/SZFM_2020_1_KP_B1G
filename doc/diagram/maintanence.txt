@@ -1,0 +1,10 @@
+title Hibaelhárítás
+
+actor Ügyfél #lightgreen
+participant Cég
+participant Support
+
+Ügyfél->Cég:Hiba észrevétel jelzése
+Cég ->Support: Hiba észrevétele, továbbítása
+Support ->Cég: Javított, frissített verzió átadása
+Cég->Ügyfél: Üzemkész alkalmazás
