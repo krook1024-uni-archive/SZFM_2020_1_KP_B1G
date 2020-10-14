@@ -17,7 +17,7 @@ Támogatott platformok:
 - Windows
 - Linux
 - MacOS
-- Andorid
+- Android
 - iOS
 
 ## Halózat, tűzfal
@@ -28,6 +28,7 @@ A böngésző kezel mindent.
 ## Fejlesztő eszközök
 
 * Visual Code - kódírás, szövegszerkesztés
+* Atom - kódírás, szövegszerkesztés
 * Prettier - formázó eszköz
 * VS Plugins:
   * ES7
