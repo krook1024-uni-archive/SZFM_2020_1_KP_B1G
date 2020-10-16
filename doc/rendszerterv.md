@@ -174,6 +174,16 @@ Ezzel lehetőség nyílik arra, hogy a kollekciókhoz sémákat rendeljünk hozz
 
 # Telepítési terv
 
+A rendszer telepítését Heroku segítségével fogjuk automatizáltan elvégezni.
+
+A fejlesztés során alaposan ügyelni kell arra, hogy a `main` branchen mindig
+*up-to-date* kód legyen, amely futásra kész. Ezt elősegíti a tény, hogy erre a
+branchre a verziókövető rendszer nem enged módosítást pusholni, hogyha a kód
+megbukik az egységteszteken, vagy attól hamarabb.
+
+A fenti követelmény teljesülésével biztosítható, hogy a szerveren lévő kód
+mindig naprakész marad, felhasználói beavatkozást a frissítés így nem igényel.
+
 # Tesztterv
 
 # Karbantartási terv
