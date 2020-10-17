@@ -44,6 +44,55 @@ funkcionalitást.
 
 # Követelmények
 
+# Rendszerterv 
+
+## Funkcionális követelmények
+
+### Autók listázása 
++ Az autók listája az oldalon meg kell, hogy egyezen az adatbázis Car kollekciójában lévő elemekkel. 
++ Az adatbázis frissülésekor az oldalon is frissülnie kell az autók listájának.  
+
+### Adatbázis 
++ [MonogDB](https://www.mongodb.com/) használata 
++ Írás előtt adatok biztonságának ellenőrzése 
+
+### Autóbérlés 
++ Form validation 
++ [ExpressJS](https://expressjs.com/) használata 
++ [ReactJS](https://reactjs.org/) használata
+
+### Regisztráció-belépés
++ Belépésnél, regisztációnál form validation 
++ Az felhasználók jelszavának titkosítása 
++ Felhasználói authentikáció 
++ Express JS library használata 
++ ReactJS használata 
+
+### Admin felüelt
++ React Admin Library használata 
++ User collection CRUD funkciói 
++ Car collection CRUD funkciói 
++ Rent collection CRUD funkciói 
+ 
+
+### Demo 
++ Autók listázásának elkészítése 
++ Admin felület elkészítése
++ Dizájn elkészítése 
++ MongoDB és ExpressJS REST API helyett [JSON-Server](github.com/typicode/json-server) használata 
+
+## Nem funkcionális követelmények
+
++ A felhasználói felület legyen letisztult, könnyen kezelhető.
++ Az admin felület, legyen letisztult könnyen kezelhető. 
++ 800-1600 sor kód 
++ Platformfüggetlenség 
++ A dizájn egyezzen meg a képernyőtervvel 
+
+## Törvényi előírások: 
+
+A [funkcionális specifikációban](./funkspec.md) leírtak érvényesek. 
+
 # Funkcionális terv
 
 # Fizikai környezet
