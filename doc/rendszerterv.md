@@ -26,16 +26,19 @@ funkcionalitást.
 # Fizikai környezet
 
 ## Platform
+
 * React
 * Express
 * MongoDB
 
 ## Hardver
 
-**Szerver hardver igény:**
-A szerver NodeJS 12.x vagy nagyobb elérhető
+**Szerveroldali hardver igény:**
+
+A szerver NodeJS 12.x vagy nagyobb elérhető verzió.
 
 **Felhasználásói hardver igény:**
+
 Az alkalmazás platform független webalkalmazás.
 Olyan hardver szükséges ami a modern böngészöket képes futtatni.
 Támogatott platformok: 
@@ -202,6 +205,7 @@ Hetente az aktuális bugok és hibák javítása, patchelés.
 Amennyiben a fatális hiba, ami a program működését megakadályozza, akkor azonnali
 elhárítás. Ha a hiba nem akadályozza a program működését, akkor az adott heti
 karbantartás alkalmával orvosoljuk a hibákat.
+A dependabot által nyújtott patchek felhasználasa.
 
 ## Szoftver frissítés folyamata
 
