@@ -42,72 +42,72 @@ funkcionalitást.
 
 # Üzleti folyamatok modellje
 
-Az üzleti folyamatok modellje megyezik [funkcionális](./funkspec.md) specifikációban leírtakkal. 
+Az üzleti folyamatok modellje megyezik [funkcionális](./funkspec.md) specifikációban leírtakkal.
 
-## Kiegészítés 
+## Kiegészítés
 
 ### Felhasználók kezelése az Admin felületen
 
 ![./img/admin_felhasznalo.png](./img/admin_felhasznalo.png)
 
-### Bérlések kezelése az Admin felületen 
+### Bérlések kezelése az Admin felületen
 
 ![./img/admin_berles.png](./img/admin_berles.png)
 
 # Követelmények
 
-# Rendszerterv 
+# Rendszerterv
 
 ## Funkcionális követelmények
 
-### Autók listázása 
-+ Az autók listája az oldalon meg kell, hogy egyezen az adatbázis Car kollekciójában lévő elemekkel. 
+### Autók listázása
++ Az autók listája az oldalon meg kell, hogy egyezen az adatbázis Car kollekciójában lévő elemekkel.
 + Az adatbázis frissülésekor az oldalon is frissülnie kell az autók listájának.  
 
-### Adatbázis 
-+ [MonogDB](https://www.mongodb.com/) használata 
-+ Írás előtt adatok biztonságának ellenőrzése 
+### Adatbázis
++ [MonogDB](https://www.mongodb.com/) használata
++ Írás előtt adatok biztonságának ellenőrzése
 
-### Autóbérlés 
-+ Form validation 
-+ [ExpressJS](https://expressjs.com/) használata 
+### Autóbérlés
++ Form validation
++ [ExpressJS](https://expressjs.com/) használata
 + [ReactJS](https://reactjs.org/) használata
 
 ### Regisztráció-belépés
-+ Belépésnél, regisztációnál form validation 
-+ Az felhasználók jelszavának titkosítása 
-+ Felhasználói authentikáció 
-+ Express JS library használata 
-+ ReactJS használata 
++ Belépésnél, regisztációnál form validation
++ Az felhasználók jelszavának titkosítása
++ Felhasználói authentikáció
++ Express JS library használata
++ ReactJS használata
 
 ### Admin felüelt
-+ React Admin Library használata 
-+ User collection CRUD funkciói 
-+ Car collection CRUD funkciói 
-+ Rent collection CRUD funkciói 
- 
++ React Admin Library használata
++ User collection CRUD funkciói
++ Car collection CRUD funkciói
++ Rent collection CRUD funkciói
 
-### Demo 
-+ Autók listázásának elkészítése 
+
+### Demo
++ Autók listázásának elkészítése
 + Admin felület elkészítése
-+ Dizájn elkészítése 
-+ MongoDB és ExpressJS REST API helyett [JSON-Server](github.com/typicode/json-server) használata 
++ Dizájn elkészítése
++ MongoDB és ExpressJS REST API helyett [JSON-Server](github.com/typicode/json-server) használata
 
 ## Nem funkcionális követelmények
 
 + A felhasználói felület legyen letisztult, könnyen kezelhető.
-+ Az admin felület, legyen letisztult könnyen kezelhető. 
-+ 800-1600 sor kód 
-+ Platformfüggetlenség 
-+ A dizájn egyezzen meg a képernyőtervvel 
++ Az admin felület, legyen letisztult könnyen kezelhető.
++ 800-1600 sor kód
++ Platformfüggetlenség
++ A dizájn egyezzen meg a képernyőtervvel
 
-## Törvényi előírások: 
+## Törvényi előírások:
 
-A [funkcionális specifikációban](./funkspec.md) leírtak érvényesek 
+A [funkcionális specifikációban](./funkspec.md) leírtak érvényesek
 
 # Funkcionális terv
 
-A [funkcionális specifikációban](./funkspec.md) leírtak érvényesek 
+A [funkcionális specifikációban](./funkspec.md) leírtak érvényesek
 
 # Fizikai környezet
 
@@ -156,33 +156,33 @@ Kompozíció: `"A" <>—— "B" : "B" nem létezhet "A" nélkül.`
 ### User interface komponensek
 
 - Every page:
-    - `<Header>`
-    - `<RegistrationModal>`
-    - `<LoginModal>`
-- `<Homepage>`:
-    - `<CarList>`
-    - `<RentModal>`
-- `<ContactPage>`:
-    - `<ContactInformation>`
+    - `<Header>` Az oldal fejléce.
+    - `<RegistrationModal>` Regisztrációs ablak.
+    - `<LoginModal>` Belépési ablak.
+- `<Homepage>`: Kezdőoldal.
+    - `<CarList>` Autólista.
+    - `<RentModal>` Bérlési ablak.
+- `<ContactPage>`: Elérhetőségi felület.
+    - `<ContactInformation>` Elérhetőségi információk
 
 ### Admin interface komponensek
 
 - `<Admin>`: A `react-admin` csomag által biztosított admin felület szülő
 komponense.
-- `<CarList>`
-- `<CarCreate>`
-- `<CarEdit>`
-- `<UserList>`
-- `<UserCreate>`
-- `<UserEdit>`
-- `<RentList>`
-- `<RentEdit>`
+- `<CarList>` Autólista.
+- `<CarCreate>` Űrlap autók létrehozására.
+- `<CarEdit>` Űrlap autók szerkesztésére.
+- `<UserList>` Felhasználólista.
+- `<UserCreate>` Űrlap felhasználók létrehozására.
+- `<UserEdit>` Űrlap felhasználók szerkesztésére.
+- `<RentList>` Bérlési lista.
+- `<RentEdit>` Űrlap a bérlések szerkesztésére.
 
-## Uzleti logika osztalyai
+## Üzleti logika osztályai
 
-- `CarController`
-- `UserController`
-- `RentController`
+- `CarController` Autók szabályzása.
+- `UserController` Felhasználók szabályzása.
+- `RentController` Berlések szabályzása.
 
 # Adatbázis terv
 
@@ -330,10 +330,10 @@ felhasználva a tesztelés során dokumentálás céljából.
 ### Séma
 
 ```markdown
-**Tesztelt funkció:** 
-**Elvárt viselkedés:** 
-**Valódi viselkedés:** 
-**Elfogadjuk (igen/nem):** 
+**Tesztelt funkció:**
+**Elvárt viselkedés:**
+**Valódi viselkedés:**
+**Elfogadjuk (igen/nem):**
 ```
 
 # Karbantartási terv
