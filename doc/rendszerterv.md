@@ -113,6 +113,28 @@ A [funkcionális specifikációban](./funkspec.md) leírtak érvényesek.
 
 # Architekturális terv
 
+Az alkalmazásunk az MVC architekturális, tervezési mintát használja. Emiatt az 
+alkalmazásunk könnyen bővíthető változtatható, mivel az alkalmazás különböző 
+rétegei jól el vannak különítve.
+
+## Alkalmazás fő rétegei
+
+- **Model:** Az *üzleti logika* megvalósítását tartalmazza.
+- **Vezérlő:** Az *üzleti logika* és a nézet közötti kapcsolatott teremti meg.
+- **Nézet:** Megjeleníti a modellt, olyan jellemzően egy felhasználói felületi
+ elem képében, amely alkalmas a felhasználói interakcióra.
+
+ ## Jogosultságok
+
+ 3 féle jogosultsági szintet különböztetünk meg az alkalmazásban:
+ * Vendég: Autók listázása, megtekintése. Információ szerzés.
+ * Regisztrált ügyfél: A *Vendég* jogosultság kiterjesztés, bérléssel.
+ * Dolgozó: Adatok, képek módosítása.
+
+## Diagram
+
+![./img/rendszerterv_architectural_plan.png](./img/rendszerterv_architectural_plan.png)
+
 # Implementációs terv
 
 # Adatbázis terv
