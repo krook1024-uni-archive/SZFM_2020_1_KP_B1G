@@ -1,25 +1,4 @@
-# Karbantartási terv
-
-## Karbantartás
-
-Hetente az aktuális bugok és hibák javítása, patchelés.
-Amennyiben a fatális hiba, ami a program működését megakadályozza, akkor azonnali
-elhárítás. Ha a hiba nem akadályozza a program működését, akkor az adott heti
-karbantartás alkalmával orvosoljuk a hibákat.
-
-## Szoftver frissítés folyamata
-
-Az aktuális verzió működésben tartása, amennyiben lehetséges,
-addig amíg az új verzió elkászül. Az új verzió telepítése egy kevésbé frekventált
-időszakban.
-Amennyiben az aktuális verzió nem tartható működésben, akkor gyors, sprintben
-való fejlesztés.
-
-# Modellek
-
-![img/maintanence.png](./img/maintanence.png)
-
-![img/software_upgrade.png](./img/software_upgrade.png)# A rendszer célja
+# Projektterv
 
 Rendszerünk célja roppant egyszerű. Autókölcsönző cégünknek hozunk létre egy
 online alkalmazást, így a vásárlóink számára megkönnyítjük magát a kölcsönzést.
@@ -37,8 +16,6 @@ Külön szolgáltatást nyújtunk saját alkalmazottainknak is (admin), akik az 
 rendszerben tudják ezentúl kezelni a kölcsönzéseket, nyilvántartásokat illetve
 karbantartást. Ez a felület viszont a mindenképpen a "design" elé helyezi a
 funkcionalitást.
-
-# Projektterv
 
 # Üzleti folyamatok modellje
 
@@ -110,6 +87,50 @@ A [funkcionális specifikációban](./funkspec.md) leírtak érvényesek
 A [funkcionális specifikációban](./funkspec.md) leírtak érvényesek
 
 # Fizikai környezet
+
+## Platform
+
+* React
+* Express
+* MongoDB
+
+## Hardver
+
+**Szerveroldali hardver igény:**
+
+A szerver NodeJS 12.x vagy nagyobb elérhető verzió.
+
+**Felhasználásói hardver igény:**
+
+Az alkalmazás platform független webalkalmazás.
+Olyan hardver szükséges ami a modern böngészöket képes futtatni.
+Támogatott platformok: 
+- Windows
+- Linux
+- MacOS
+- Android
+- iOS
+
+## Halózat, tűzfal
+
+Külön hálózati beállításokat nem igényel az alkalmazás. 
+A böngésző kezel mindent.
+
+## Fejlesztő eszközök
+
+* Visual Code - kódírás, szövegszerkesztés
+* Atom - kódírás, szövegszerkesztés
+* Prettier - formázó eszköz
+* VS Plugins:
+  * ES7
+  * ES6
+  * HTML Snippets
+
+## Keretrendszer
+
+Alkalmazásunk az alábbi keretrendszereket használja:
+* React(Frontend)
+* Express(Backend)
 
 # Absztrakt domain modell
 
@@ -359,3 +380,25 @@ felhasználva a tesztelés során dokumentálás céljából.
 ```
 
 # Karbantartási terv
+
+## Karbantartás
+
+Hetente az aktuális bugok és hibák javítása, patchelés.
+Amennyiben a fatális hiba, ami a program működését megakadályozza, akkor azonnali
+elhárítás. Ha a hiba nem akadályozza a program működését, akkor az adott heti
+karbantartás alkalmával orvosoljuk a hibákat.
+A dependabot által nyújtott patchek felhasználasa.
+
+## Szoftver frissítés folyamata
+
+Az aktuális verzió működésben tartása, amennyiben lehetséges, 
+addig amíg az új verzió elkászül. Az új verzió telepítése egy kevésbé frekventált
+időszakban.
+Amennyiben az aktuális verzió nem tartható működésben, akkor gyors, sprintben 
+való fejlesztés.
+
+## Modellek
+
+![img/maintanence.png](./img/maintanence.png)
+
+![img/software_upgrade.png](./img/software_upgrade.png)# A rendszer célja
