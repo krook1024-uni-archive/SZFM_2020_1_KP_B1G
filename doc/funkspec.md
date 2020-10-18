@@ -151,6 +151,36 @@ képernyőre.
 A felhasználó sikeres belépés után igénybe veheti az autóbérlés szolgáltatásunkat,
 ahol kedvére nézheti és válogathat az autók közül.
 
+# Használati esetek
+
+## Regisztrálás
+
+A *vendég* felhasználók tudnak regisztálni a regisztációs szekcióra navigálva. 
+Név, születési dátum, jogosítvány megszerzésének dátuma és jelszó megadásával.
+Regisztrálás után *regisztrált felhasználó*-vá  módosul.
+
+## Autóbérlés
+
+*Regisztrált felhasználók* tudnak autót bérelni, a bérlés szekcióra navigálva. 
+Az autó kiválasztása után idő intervallumot megadva a bérlésre, illetve fizetési 
+módot kiválasztva, a bérlés lebonyolódik.
+
+## Autók listázása
+
+Mind *vendég*, mind *regisztrált felhasználó* számára elérhető funkció. Az 
+autók listázása szekcióra navigálva lehetőség van az autók és azok paramétereinek
+ megtekintésére illetve a kölcsönzési ár megtekintésére.
+
+## Adatok módosítása
+
+A *dolgozó* jogosultságú felhasználóknak lehetősége van bejelentkezés után módosítani
+az autók adatait, állapotukat, illetve lehetőségük van autók törlésére.
+
+## Bejelentkezés
+
+Regisztálás utána a vendégeknek lehetőségük van bejelentkezni így a jogosultságaik
+módosulnak *dolgozó* vagy *regisztrált felhasználó*-éra
+
 # Fogalomszótár
 
 ## Rendszerrel kapcsolatos fogalmak
