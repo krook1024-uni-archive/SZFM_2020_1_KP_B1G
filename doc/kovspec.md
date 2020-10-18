@@ -188,3 +188,22 @@ A sütikre vonatkozó kormányzati rendelet betartása.
 - A weboldal legyen reaktív.
 - A szerver képes legyen futni bármilyen népszerű operációs rendszeren
 (GNU+Linux, MacOS, Windows).
+
+# Fogalomszótár
+
+**Felhasználó:** A felhasználó (user) az a személy (végfelhasználó, end-user) vagy szoftverágens, aki egy számítógépes vagy számítógép-hálózati szolgáltatás használója. A felhasználóhoz gyakran felhasználói fiók tartozik, amit felhasználói név (username, screen name, nick vagy handle) azonosít.
+
+
+Forrás: [https://hu.wikipedia.org/wiki/Felhaszn%C3%A1l%C3%B3](https://www.szotarjelentese.com/Admin)
+
+**Admin:** Egy adott rendszer felügyeletét ellátó, afelett általában teljes kontrollal rendelkező felhasználó.
+
+Forrás: [https://www.szotarjelentese.com/Admin](https://www.szotarjelentese.com/Admin)
+
+**GDPR:** A GDPR célja, hogy az uniós polgárok személyes adatainak védelmét szolgálja. Szabályozza az adatgyűjtés módját, feldolgozását, tárolását, törlését, adattovábbítást és felhasználását.
+
+Forrás: [https://adatvedelmiszolgaltato.hu/miert-jott-letre-a-gdpr-mi-az-a-gdpr-gdpr-jelentese](https://adatvedelmiszolgaltato.hu/miert-jott-letre-a-gdpr-mi-az-a-gdpr-gdpr-jelentese)
+
+**Reszponzív:** A reszponzív weboldal (RWD) egy olyan megközelítéssel tervezett weboldal, amelynek a célja az, hogy optimális megjelenést biztosítson - könnyű olvashatóság, egyszerű navigáció a lehető legkevesebb átméretezéssel és görgetéssel - a legkülönfélébb eszközökön.
+
+Forrás: [https://hu.wikipedia.org/wiki/Reszponz%C3%ADv_weboldal](https://hu.wikipedia.org/wiki/Reszponz%C3%ADv_weboldal)

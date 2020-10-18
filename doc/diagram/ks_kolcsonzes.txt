@@ -1,0 +1,20 @@
+title Kölcsönzés
+
+actor Vendég #lightgreen
+participant Személyes jelenlét/Telefon
+actor Cég #red
+
+Vendég->Cég:Kérés közlése
+Cég->Vendég:Kérés feldolgozása
+Cég->Vendég:Szükséges igazolványok elkérése
+Cég->Vendég:Szerződés(2 példányban) való kitöltése
+Vendég->Cég:Igazolványok átadása
+Vendég->Cég:Szerződés elfogadása/aláírása
+Cég->Vendég: Kérés teljesítése
+
+
+
+
+
+
+
