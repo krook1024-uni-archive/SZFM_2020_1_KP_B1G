@@ -56,7 +56,8 @@ más mint a Modell-nézet-vezérlő programtervezési minta.
 Fogalmak melyekkel tisztában kell lennünk:
 
 * Modell: Az alkalmazás által kezelt információk tartomány-specifikus ábrázolása.
-* Nézet: Megjeleníti a modellt egy megfelelő alakban, mely alkalmas a felhasználói interakcióra, jellemzően egy felhasználói felületi elem képében.
+* Nézet: Megjeleníti a modellt egy megfelelő alakban, mely alkalmas a felhasználói
+ interakcióra, jellemzően egy felhasználói felületi elem képében.
 * Vezérlő: Az eseményeket, jellemzően felhasználói műveleteket dolgozza fel és
  válaszol rájuk.
 
