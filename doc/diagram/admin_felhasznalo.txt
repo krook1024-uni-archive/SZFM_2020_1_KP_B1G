@@ -1,0 +1,6 @@
+title Felhasználó adatok kezelése
+
+participant Adminsztrátor
+participant Weboldal (admin felület)
+
+Weboldal (admin felület)->Adminsztrátor:Listázza a felhasználók adatait.

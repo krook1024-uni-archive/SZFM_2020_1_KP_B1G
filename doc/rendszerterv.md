@@ -42,6 +42,18 @@ funkcionalitást.
 
 # Üzleti folyamatok modellje
 
+Az üzleti folyamatok modellje megyezik [funkcionális](./funkspec.md) specifikációban leírtakkal. 
+
+## Kiegészítés 
+
+### Felhasználók kezelése az Admin felületen
+
+![./img/admin_felhasznalo.png](./img/admin_felhasznalo.png)
+
+### Bérlések kezelése az Admin felületen 
+
+![./img/admin_berles.png](./img/admin_berles.png)
+
 # Követelmények
 
 # Funkcionális terv

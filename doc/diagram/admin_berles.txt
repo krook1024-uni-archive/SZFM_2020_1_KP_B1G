@@ -1,0 +1,6 @@
+title Bérlési adatok kezelése
+
+participant Adminsztrátor
+participant Weboldal (admin felület)
+
+Weboldal (admin felület)->Adminsztrátor:Listázza az autó bérlések adatait.
