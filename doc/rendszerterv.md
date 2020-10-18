@@ -247,4 +247,24 @@ mindig naprakész marad, felhasználói beavatkozást a frissítés így nem ig�
 
 # Tesztterv
 
+A frontend automatizált tesztelését a https://jestjs.io/ tesztelő framework-kel
+fogjuk megvalósítani.
+
+Az automatizált tesztelésen kívül manuális (kézi) tesztelésre is szükség van,
+erről a következő alfejezetben adunk tájékoztatást.
+
+## Manuális tesztelés
+
+A manuális tesztelés során tesztjegyzőkönyvet kell készíteni, az alábbi sémát
+felhasználva a tesztelés során dokumentálás céljából.
+
+### Séma
+
+```markdown
+**Tesztelt funkció:** 
+**Elvárt viselkedés:** 
+**Valódi viselkedés:** 
+**Elfogadjuk (igen/nem):** 
+```
+
 # Karbantartási terv
