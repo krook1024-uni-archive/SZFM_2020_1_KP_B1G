@@ -9,10 +9,10 @@ karbantartás alkalmával orvosoljuk a hibákat.
 
 ## Szoftver frissítés folyamata
 
-Az aktuális verzió működésben tartása, amennyiben lehetséges, 
+Az aktuális verzió működésben tartása, amennyiben lehetséges,
 addig amíg az új verzió elkászül. Az új verzió telepítése egy kevésbé frekventált
 időszakban.
-Amennyiben az aktuális verzió nem tartható működésben, akkor gyors, sprintben 
+Amennyiben az aktuális verzió nem tartható működésben, akkor gyors, sprintben
 való fejlesztés.
 
 # Modellek
@@ -50,6 +50,39 @@ funkcionalitást.
 
 # Absztrakt domain modell
 
+Alkalmazásunk alapvetően az MVC architekturális modell-t fogja használni. Ami nem
+más mint a Modell-nézet-vezérlő programtervezési minta.
+
+Fogalmak melyekkel tisztában kell lennünk:
+
+* Modell: Az alkalmazás által kezelt információk tartomány-specifikus ábrázolása.
+* Nézet: Megjeleníti a modellt egy megfelelő alakban, mely alkalmas a felhasználói interakcióra, jellemzően egy felhasználói felületi elem képében.
+* Vezérlő: Az eseményeket, jellemzően felhasználói műveleteket dolgozza fel és
+ válaszol rájuk.
+
+A 3 komponens közül a modell lesz egyenlő az adatbázissal, a nézet a frontend-el
+és a vezérlő a backend-el.
+
+Így felmerül 3 új szintén fontos fogalom:
+
+* Adatbázis: Tárolt adatok összessége.
+* Frontend: A webalkalmazás azon része, melyet maga a felhasználó lát és interakcióba
+tud lépni vele.
+* Backend: A webalkalmazás azon része, mely az adatok feldolgozásáért felel.
+
+
+### Absztrakt komponensek és kapcsolatai
+
+![.img/absztrakt_komp.png](./img/absztrakt_komp.png)
+
+#### Jelmagyarázat:
+
+Szemely: 1 darab valós személy.
+Berles: Maga az autóbérlés folyamata.
+Auto: A gépjármű.
+
+Kompozíció: "A" <>---- "B" : "B" nem létezhet "A" nélkül.
+
 # Architekturális terv
 
 # Implementációs terv
@@ -59,29 +92,29 @@ funkcionalitást.
 ## Bevezetés
 
 Az alkalmazás adatainak tárolására a [MongoDB](https://www.mongodb.com/) nevű adatbázist fogjuk használni.
-A MongoDB egy flexibilis, jó skálázhatósággal rendelkező NoSQL  adatbázis. 
-Az adatokat JSON-höz hasonló dokumentumokban tárolja, az adatok 
+A MongoDB egy flexibilis, jó skálázhatósággal rendelkező NoSQL  adatbázis.
+Az adatokat JSON-höz hasonló dokumentumokban tárolja, az adatok
 struktúrája
-szempontjából nagyobb rugalmasságot biztosít, mint egy SQL adatbázis, 
-ugyanis nincs szükség előre definiálni a táblákat, ezek közötti kapcsolatokat. 
+szempontjából nagyobb rugalmasságot biztosít, mint egy SQL adatbázis,
+ugyanis nincs szükség előre definiálni a táblákat, ezek közötti kapcsolatokat.
 
-## Kollekciók 
+## Kollekciók
 
-Az adatbázis három kollekciót fog tartalmazni, amik a következőek: 
-+ user - a felhasználók adatai 
-+ car - a bérelhető autók adatai 
-+ rent - a bérlések adatai 
+Az adatbázis három kollekciót fog tartalmazni, amik a következőek:
++ user - a felhasználók adatai
++ car - a bérelhető autók adatai
++ rent - a bérlések adatai
 
-## Sémák 
+## Sémák
 
-Az adatbázis kódban való kezelésére a [mongoose](https://mongoosejs.com/) NodeJS könyvtárat fogjuk használni. 
-Ezzel lehetőség nyílik arra, hogy a kollekciókhoz sémákat rendeljünk hozzá, ami nagyban megkönnyíti az adatbázisba való beillesztést. 
+Az adatbázis kódban való kezelésére a [mongoose](https://mongoosejs.com/) NodeJS könyvtárat fogjuk használni.
+Ezzel lehetőség nyílik arra, hogy a kollekciókhoz sémákat rendeljünk hozzá, ami nagyban megkönnyíti az adatbázisba való beillesztést.
 
 **User Séma**
 
     const UserSchema = new mongoose.Schema({
 	    name: {
-		    type: String, 
+		    type: String,
 		   required: true
 	    },
 	    email: {
@@ -101,7 +134,7 @@ Ezzel lehetőség nyílik arra, hogy a kollekciókhoz sémákat rendeljünk hozz
 		    required: true
 	    },
         createdAt: {
-            type: Date, 
+            type: Date,
             default: Date.now()
         },
         updatedAt: {
@@ -134,7 +167,7 @@ Ezzel lehetőség nyílik arra, hogy a kollekciókhoz sémákat rendeljünk hozz
 		    required: true
 	    },
         createdAt: {
-            type: Date, 
+            type: Date,
             default: Date.now()
         },
         updatedAt: {
@@ -151,7 +184,7 @@ Ezzel lehetőség nyílik arra, hogy a kollekciókhoz sémákat rendeljünk hozz
 
     const RentSchema = new mongoose.Schema({
 	    carId: {
-		    type: mongoose.ObjectId, 
+		    type: mongoose.ObjectId,
 		    required: true
 	    },
 	    userId: {
