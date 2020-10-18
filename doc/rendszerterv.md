@@ -103,9 +103,11 @@ Az üzleti folyamatok modellje megyezik [funkcionális](./funkspec.md) specifik�
 
 ## Törvényi előírások: 
 
-A [funkcionális specifikációban](./funkspec.md) leírtak érvényesek. 
+A [funkcionális specifikációban](./funkspec.md) leírtak érvényesek 
 
 # Funkcionális terv
+
+A [funkcionális specifikációban](./funkspec.md) leírtak érvényesek 
 
 # Fizikai környezet
 
