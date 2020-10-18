@@ -145,11 +145,44 @@ Szemely: 1 darab valós személy.
 Berles: Maga az autóbérlés folyamata.
 Auto: A gépjármű.
 
-Kompozíció: "A" <>---- "B" : "B" nem létezhet "A" nélkül.
+Kompozíció: `"A" <>—— "B" : "B" nem létezhet "A" nélkül.`
 
 # Architekturális terv
 
 # Implementációs terv
+
+## Kliens oldali komponensek
+
+### User interface komponensek
+
+- Every page:
+    - `<Header>`
+    - `<RegistrationModal>`
+    - `<LoginModal>`
+- `<Homepage>`:
+    - `<CarList>`
+    - `<RentModal>`
+- `<ContactPage>`:
+    - `<ContactInformation>`
+
+### Admin interface komponensek
+
+- `<Admin>`: A `react-admin` csomag által biztosított admin felület szülő
+komponense.
+- `<CarList>`
+- `<CarCreate>`
+- `<CarEdit>`
+- `<UserList>`
+- `<UserCreate>`
+- `<UserEdit>`
+- `<RentList>`
+- `<RentEdit>`
+
+## Uzleti logika osztalyai
+
+- `CarController`
+- `UserController`
+- `RentController`
 
 # Adatbázis terv
 
