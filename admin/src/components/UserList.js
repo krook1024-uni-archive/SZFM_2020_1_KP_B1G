@@ -18,8 +18,6 @@ export const UserList = (props) => {
         <DateField source="dateOfBirth"></DateField>
         <TextField source="licenseCategory"></TextField>
         <DateField source="createdAt"></DateField>
-        <DateField source="updatedAt"></DateField>
-        <DateField source="deletedAt"></DateField>
         <EditButton basePath="/users"></EditButton>
         <DeleteButton basePath="/users"></DeleteButton>
       </Datagrid>
