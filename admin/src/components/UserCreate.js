@@ -10,44 +10,50 @@ import {
   TextField,
   DateField,
   EditButton,
+  PasswordInput,
 } from "react-admin";
 
-const helpManufacturer = "The name of the car manufacturer";
-const helpModel = "The name of the car model";
-const helpManufacturingDate = "Pick the car Manufacturing Date";
-const helpPlate = "The license plate number";
+const helpName = "";
+const helpEmail = "";
+const helpPassword = "";
+const helpDateOfBirth = "";
+const helpLicenseCategory = "";
 
-const labelManufacturer = "Manufacturer";
-const labelModel = "Model";
-const labelManufacturingDate = "Manufacturing Date";
-const labelPlate = "License Plate Number";
+const labelName = "";
+const labelEmail = "";
+const labelPassword = "";
+const labelDateOfBirth = "";
+const labelLicenseCategory = "";
 
-const carManufacturer;
-const carManufacturingDate;
-const carModel;
-const carPlate;
-const carDateCreated;
-const carDateUpdated;
-const carDateDeleted;
+var userName;
+var userEmail;
+var userPassword;
+var userDateOfBirth;
+var userLicenseCategory;
 
-export const CarCreate = (props) => (
+var userDateCreated;
+var userDateUpdated;
+var userDateDeleted;
+
+export const UserCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
-      <TextInput
-        source="manufacturer"
-        label={labelManufacturer}
-        helperText={helpManufacturer}
-      />
-      <TextInput source="model" label={labelModel} helperText={helpModel} />
-      <DateInput
-        source="manufacturing_date"
-        label={labelManufacturingDate}
-        helperText={helpManufacturingDate}
+      <TextInput source="name" label={labelName} helperText={helpName} />
+      <TextInput source="email" label={labelEmail} helperText={helpEmail} />
+      <PasswordInput
+        source="passord"
+        label={labelPassword}
+        helperText={helpPassword}
       />
       <TextInput
-        source="license_plate"
-        label={labelPlate}
-        helperText={helpPlate}
+        source="date_of_birth"
+        label={labelDateOfBirth}
+        helperText={helpDateOfBirth}
+      />
+      <TextInput
+        source="license_category"
+        label={labelLicenseCategory}
+        helperText={helpLicenseCategory}
       />
     </SimpleForm>
   </Create>
@@ -55,7 +61,6 @@ export const CarCreate = (props) => (
 
 export const UserEdit = (props) => (
   <Edit {...props}>
-    <SimpleForm>
-    </SimpleForm>
+    <SimpleForm></SimpleForm>
   </Edit>
 );
