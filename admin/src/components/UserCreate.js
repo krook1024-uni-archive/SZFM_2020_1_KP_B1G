@@ -1,29 +1,25 @@
 import * as React from "react";
+import useRef from "react";
 import {
   Create,
   Edit,
   SimpleForm,
   TextInput,
   DateInput,
-  ReferenceManyField,
-  Datagrid,
-  TextField,
-  DateField,
-  EditButton,
   PasswordInput,
 } from "react-admin";
 
-const helpName = "";
-const helpEmail = "";
-const helpPassword = "";
+const helpName = "Name of user";
+const helpEmail = "e.g: example@xyz.com";
+const helpPassword = "Contain xyz";
 const helpDateOfBirth = "";
-const helpLicenseCategory = "";
+const helpLicenseCategory = "Example: 'B+E'";
 
-const labelName = "";
-const labelEmail = "";
-const labelPassword = "";
-const labelDateOfBirth = "";
-const labelLicenseCategory = "";
+const labelName = "Name";
+const labelEmail = "Email";
+const labelPassword = "Password";
+const labelDateOfBirth = "Date of Birth";
+const labelLicenseCategory = "Category of your license";
 
 var userName;
 var userEmail;
@@ -45,7 +41,7 @@ export const UserCreate = (props) => (
         label={labelPassword}
         helperText={helpPassword}
       />
-      <TextInput
+      <DateInput
         source="date_of_birth"
         label={labelDateOfBirth}
         helperText={helpDateOfBirth}
@@ -61,6 +57,34 @@ export const UserCreate = (props) => (
 
 export const UserEdit = (props) => (
   <Edit {...props}>
-    <SimpleForm></SimpleForm>
+    <SimpleForm>
+      <SimpleForm>
+        <TextInput
+          source="name"
+          label={labelName}
+          initialValue="Name" /*todo inicializálni*/
+        />
+        <TextInput
+          source="email"
+          label={labelEmail}
+          initialValue="test@email.com" /*todo inicializálni*/
+        />
+        <PasswordInput
+          source="passord"
+          label={labelPassword}
+          initialValue="password" /*todo inicializálni*/
+        />
+        <DateInput
+          source="date_of_birth"
+          label={labelDateOfBirth}
+          initialValue={new Date()} /*todo inicializálni*/
+        />
+        <TextInput
+          source="license_category"
+          label={labelLicenseCategory}
+          initialValue="X" /*todo inicializálni*/
+        />
+      </SimpleForm>
+    </SimpleForm>
   </Edit>
 );
