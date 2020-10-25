@@ -8,11 +8,12 @@ import { CarCreate, CarEdit } from "./components/CarCreate";
 const dataProvider = jsonServerProvider("http://localhost:3004"); // todo: move this to a config
 
 const App = () => {
-  return;
-  <Admin dataProvider={dataProvider}>
-    <Resource name="users" list={UserList} />
-    <Resource name="rents" list={RentList} />
-  </Admin>;
+  return (
+    <Admin dataProvider={dataProvider}>
+      <Resource name="users" list={UserList} />
+      <Resource name="rents" list={RentList} />
+    </Admin>
+  );
 };
 
 export default App;
