@@ -5,6 +5,7 @@ import UserList from "./components/UserList";
 import UserEdit from "./components/UserEdit";
 import RentList from "./components/RentList";
 import CarList from "./components/CarList";
+import CarEdit from "./components/CarEdit";
 
 const dataProvider = jsonServerProvider("http://localhost:3004"); // todo: move this to a config
 
@@ -13,7 +14,7 @@ const App = () => {
     <Admin dataProvider={dataProvider}>
       <Resource name="users" list={UserList} edit={UserEdit} />
       <Resource name="rents" list={RentList} />
-      <Resource name="cars" list={CarList} />
+      <Resource name="cars" list={CarList} edit={CarEdit} />
     </Admin>
   );
 };
