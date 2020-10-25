@@ -22,13 +22,13 @@ const labelModel = "Model";
 const labelManufacturingDate = "Manufacturing Date";
 const labelPlate = "License Plate Number";
 
-const carManufacturer;
-const carManufacturingDate;
-const carModel;
-const carPlate;
-const carDateCreated;
-const carDateUpdated;
-const carDateDeleted;
+var carManufacturer;
+var carManufacturingDate;
+var carModel;
+var carPlate;
+var carDateCreated;
+var carDateUpdated;
+var carDateDeleted;
 
 export const CarCreate = (props) => (
   <Create {...props}>
@@ -56,22 +56,22 @@ export const CarCreate = (props) => (
 export const CarEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
-      <TextInput disabled label="Id" source="id" />
-      <TextInput source="title" />
-      <TextInput multiline source="teaser" />
-      <TextInput source="body" />
-      <DateInput label="Publication date" source="published_at" />
-      <ReferenceManyField
-        label="Comments"
-        reference="comments"
-        target="post_id"
-      >
-        <Datagrid>
-          <TextField source="body" />
-          <DateField source="created_at" />
-          <EditButton />
-        </Datagrid>
-      </ReferenceManyField>
+      <TextInput
+        source="manufacturer"
+        label={labelManufacturer}
+        helperText={helpManufacturer}
+      />
+      <TextInput source="model" label={labelModel} helperText={helpModel} />
+      <DateInput
+        source="manufacturing_date"
+        label={labelManufacturingDate}
+        helperText={helpManufacturingDate}
+      />
+      <TextInput
+        source="license_plate"
+        label={labelPlate}
+        helperText={helpPlate}
+      />
     </SimpleForm>
   </Edit>
 );
