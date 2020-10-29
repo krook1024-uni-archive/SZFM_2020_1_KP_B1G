@@ -23,7 +23,7 @@
   ],
   "cars": [
     {
-      "_id": 1,
+      "id": 1,
       "plateNumber": "SBS-242",
       "make": "Volkswagen",
       "model": "Golf VII",
@@ -35,7 +35,7 @@
   ],
   "rents": [
     {
-      "_id": "1",
+      "id": "1",
       "carId": 1,
       "userId": 1,
       "startTime": "2020-01-01 20:02:14",
