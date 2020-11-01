@@ -52,26 +52,3 @@ export const CarCreate = (props) => (
     </SimpleForm>
   </Create>
 );
-
-export const CarEdit = (props) => (
-  <Edit {...props}>
-    <SimpleForm>
-      <TextInput
-        source="manufacturer"
-        label={labelManufacturer}
-        helperText={helpManufacturer}
-      />
-      <TextInput source="model" label={labelModel} helperText={helpModel} />
-      <DateInput
-        source="manufacturing_date"
-        label={labelManufacturingDate}
-        helperText={helpManufacturingDate}
-      />
-      <TextInput
-        source="license_plate"
-        label={labelPlate}
-        helperText={helpPlate}
-      />
-    </SimpleForm>
-  </Edit>
-);
