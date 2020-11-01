@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { RentalProvider } from "./context/rental-context";
 import AdminPage from "./pages/AdminPage";
 import HomePage from "./pages/HomePage";
 
@@ -9,7 +10,9 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path='/'>
-            <HomePage />
+            <RentalProvider>
+              <HomePage />
+            </RentalProvider>
           </Route>
           <Route path='/admin'>
             <AdminPage />
