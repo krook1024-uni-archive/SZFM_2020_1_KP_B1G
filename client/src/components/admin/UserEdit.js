@@ -1,19 +1,11 @@
 import * as React from "react";
-import useRef from "react";
 import {
-  Create,
   Edit,
   SimpleForm,
   TextInput,
   DateInput,
   PasswordInput,
 } from "react-admin";
-
-const helpName = "Name of user";
-const helpEmail = "e.g: example@xyz.com";
-const helpPassword = "Contain xyz";
-const helpDateOfBirth = "";
-const helpLicenseCategory = "Example: 'B+E'";
 
 const labelName = "Name";
 const labelEmail = "Email";
