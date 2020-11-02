@@ -3,12 +3,7 @@ import {
   Create,
   SimpleForm,
   TextInput,
-  DateInput,
-  ReferenceManyField,
-  Datagrid,
-  TextField,
-  DateField,
-  EditButton,
+  DateInput
 } from "react-admin";
 
 const helpManufacturer = "The name of the car manufacturer";
