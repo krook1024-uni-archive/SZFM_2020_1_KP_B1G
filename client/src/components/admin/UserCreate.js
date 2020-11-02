@@ -21,16 +21,6 @@ const labelPassword = "Password";
 const labelDateOfBirth = "Date of Birth";
 const labelLicenseCategory = "Category of your license";
 
-var userName;
-var userEmail;
-var userPassword;
-var userDateOfBirth;
-var userLicenseCategory;
-
-var userDateCreated;
-var userDateUpdated;
-var userDateDeleted;
-
 export const UserCreate = (props) => (
   <Create {...props}>
     <SimpleForm>

@@ -21,12 +21,6 @@ const labelPassword = "Password";
 const labelDateOfBirth = "Date of Birth";
 const labelLicenseCategory = "Category of your license";
 
-var userName;
-var userEmail;
-var userPassword;
-var userDateOfBirth;
-var userLicenseCategory;
-
 export const UserEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
