@@ -6,6 +6,7 @@ import UserEdit from "../components/admin/UserEdit";
 import RentList from "../components/admin/RentList";
 import CarList from "../components/admin/CarList";
 import CarEdit from "../components/admin/CarEdit";
+import UserCreate from "../components/admin/UserCreate";
 
 const dataProvider = jsonServerProvider("http://localhost:3004"); // todo: move this to a config
 
@@ -13,7 +14,7 @@ const AdminPage = () => {
   return (
     <>
       <Admin dataProvider={dataProvider}>
-        <Resource name='users' list={UserList} edit={UserEdit} />
+        <Resource name='users' list={UserList} edit={UserEdit} create={UserCreate} />
         <Resource name='rents' list={RentList} />
         <Resource name='cars' list={CarList} edit={CarEdit} />
       </Admin>
