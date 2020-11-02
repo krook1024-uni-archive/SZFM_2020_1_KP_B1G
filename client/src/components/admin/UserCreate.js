@@ -54,3 +54,5 @@ export const UserCreate = (props) => (
     </SimpleForm>
   </Create>
 );
+
+export default UserCreate;

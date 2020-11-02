@@ -60,3 +60,5 @@ export const UserEdit = (props) => (
     </SimpleForm>
   </Edit>
 );
+
+export default UserEdit;
