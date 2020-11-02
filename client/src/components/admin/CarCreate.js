@@ -1,7 +1,6 @@
 import * as React from "react";
 import {
   Create,
-  Edit,
   SimpleForm,
   TextInput,
   DateInput,
@@ -21,14 +20,6 @@ const labelManufacturer = "Manufacturer";
 const labelModel = "Model";
 const labelManufacturingDate = "Manufacturing Date";
 const labelPlate = "License Plate Number";
-
-var carManufacturer;
-var carManufacturingDate;
-var carModel;
-var carPlate;
-var carDateCreated;
-var carDateUpdated;
-var carDateDeleted;
 
 export const CarCreate = (props) => (
   <Create {...props}>
@@ -52,3 +43,4 @@ export const CarCreate = (props) => (
     </SimpleForm>
   </Create>
 );
+export default CarCreate;
