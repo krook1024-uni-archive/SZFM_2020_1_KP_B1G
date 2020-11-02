@@ -4,11 +4,17 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 
-const Example = () => {
+const Registration = () => {
+  const firstName = useRef();
+  const lastName = useRef();
+  const email = useRef();
+  const password = useRef();
+  const licenseType = useRef();
+  const licenseDate = useRef();
   return (
     <Modal.Dialog>
       <Modal.Header closeButton>
-        <Modal.Title>Modal title</Modal.Title>
+        <Modal.Title>Regisztráció</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
@@ -17,26 +23,26 @@ const Example = () => {
             <Form.Label>Név</Form.Label>
             <Form.Row>
               <Col>
-                <Form.Control placeholder="Vezetéknév" />
+                <Form.Control placeholder="Vezetéknév" ref={lastName}/>
               </Col>
               <Col>
-                <Form.Control placeholder="Keresztnév" />
+                <Form.Control placeholder="Keresztnév" ref={firstName}/>
               </Col>
             </Form.Row>
           </Form.Group>
           <Form.Group controlId="formEmail">
             <Form.Label>Email cím</Form.Label>
-            <Form.Control type="email" placeholder="Enter email.." />
+            <Form.Control type="email" placeholder="Enter email.." ref={email}/>
             <Form.Text className="text-muted">pl: pelda@email.com</Form.Text>
           </Form.Group>
 
           <Form.Group controlId="formPassword">
             <Form.Label>Jelszó</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
+            <Form.Control type="password" placeholder="Password" id="inputPassword" ref={password}/>
           </Form.Group>
           <Form.Group controlId="formLicenseType">
             <Form.Label>Jogosítvány típusa</Form.Label>
-            <Form.Control as="select">
+            <Form.Control as="select" id="inputLiceseType" ref={licenseType}>
               <option>AM</option>
               <option>A1</option>
               <option>A2</option>
@@ -57,16 +63,16 @@ const Example = () => {
           <Form.Group controlId="formLicenseDate">
             <Form.Label>Jogosítvány megszerzés dátuma</Form.Label>
             <br></br>
-            <input type="date"></input>
+            <input type="date" id="inputLicensedate" ref={licenseDate}></input>
           </Form.Group>
         </Form>
       </Modal.Body>
 
       <Modal.Footer>
         <Button variant="secondary">Close</Button>
-        <Button variant="primary">Save changes</Button>
+        <Button variant="primary">Regisztráció</Button>
       </Modal.Footer>
     </Modal.Dialog>
   );
 };
-export default Example;
+export default Registration;
