@@ -1,17 +1,24 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, ListGroup } from "react-bootstrap";
 
-const Car = () => {
+const Car = ({ CarObj }) => {
   return (
     <div>
       <Card style={{ width: "35rem" }}>
+        <Card.Header>{CarObj.make} {CarObj.model}</Card.Header>
         <Card.Body>
-          <Card.Title>Car Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Button variant="primary">Rent</Button>
+          <Card.Title>
+            Adatok
+          </Card.Title>
+          <ListGroup variant="flush">
+            <ListGroup.Item>
+                Rendszám: {CarObj.plateNumber}
+            </ListGroup.Item>
+            <ListGroup.Item>
+                Gyártási év: {CarObj.productionYear}
+            </ListGroup.Item>
+          </ListGroup>
+          <Button variant="primary">Bérlés</Button>
         </Card.Body>
       </Card>
     </div>
