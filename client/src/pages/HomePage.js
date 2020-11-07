@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Container, Spinner } from "react-bootstrap";
+import Car from "../components/client/Car";
 import CarList from "../components/client/CarList";
 import { useRentalState, useRentalDispatch } from "../context/rental-context";
 
@@ -18,6 +19,7 @@ export default function HomePage() {
         <p>I'm the homepage component.</p>
         {cars_loading && <Spinner animation='grow' />}
         {!cars_loading && <CarList cars={cars}>asdasd</CarList>}
+        {<Car></Car>}
       </div>
     </Container>
   );
