@@ -1,16 +1,16 @@
 import React from "react";
-import { CardDeck } from "react-bootstrap";
+import { CardColumns } from "react-bootstrap";
 import Car from "../client/Car";
 
 const CarList = ({ cars }) => {
   if (Array.isArray(cars)) {
     return (
       <>
-        <CardDeck>
+        <CardColumns>
           {cars.map((car) => (
             <Car car={car} />
           ))}
-        </CardDeck>
+        </CardColumns>
       </>
     );
   } else {
