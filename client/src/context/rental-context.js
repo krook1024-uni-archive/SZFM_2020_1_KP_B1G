@@ -1,5 +1,4 @@
 import React, { useReducer } from "react";
-import axios from "axios";
 
 // init contexts
 const RentalStateContext = React.createContext();
@@ -8,18 +7,11 @@ const RentalDispatchContext = React.createContext();
 // reducer for specific actions
 const rentalReducer = (state, action) => {
   switch (action.type) {
-    case "get_cars": {
-      const url = "http://localhost:3004/cars";
-      const cars = axios
-        .get(url)
-        .then((data) => {
-          return data.data;
-        })
-        .catch((err) => console.log(err));
+    case "set_cars": {
       return {
         ...state,
-        cars,
         cars_loading: false,
+        cars: action.payload,
       };
     }
     default: {
