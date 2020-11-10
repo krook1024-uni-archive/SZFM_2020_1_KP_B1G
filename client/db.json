@@ -31,6 +31,16 @@
       "createdAt": "2020-01-01 20:02:14",
       "updatedAt": null,
       "deletedAt": null
+    },
+    {
+      "id": 2,
+      "plateNumber": "IUS-232",
+      "make": "Subaru",
+      "model": "Impreza WRX STI",
+      "productionYear": 2003,
+      "createdAt": "2020-01-01 20:02:14",
+      "updatedAt": null,
+      "deletedAt": null
     }
   ],
   "rents": [
