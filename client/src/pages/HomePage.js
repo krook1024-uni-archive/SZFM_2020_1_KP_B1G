@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Spinner } from "react-bootstrap";
+import { Container, Spinner, Row, Col } from "react-bootstrap";
 import CarList from "../components/client/CarList";
 import { useRentalState, useRentalDispatch } from "../context/rental-context";
 import Login from "../components/client/Login";
@@ -21,15 +21,17 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ide kellene majd a navbar*/}
+      {/* ide kellene majd a navbar */}
       <Container>
-        <div>
-          <Login />
-        </div>
-        <div>
-          {cars_loading && <Spinner animation="grow" />}
-          {!cars_loading && <CarList cars={cars} />}
-        </div>
+        <Row>
+          <Col xs={12} md={9}>
+            {cars_loading && <Spinner animation="grow" />}
+            {!cars_loading && <CarList cars={cars} />}
+          </Col>
+          <Col xs={12} md={3}>
+            <Login />
+          </Col>
+        </Row>
       </Container>
     </>
   );
