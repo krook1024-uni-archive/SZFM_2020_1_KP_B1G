@@ -3,6 +3,7 @@
 # dependencies
 /admin
 /node_modules
+/admin/node_modules
 /.pnp
 .pnp.js
 
