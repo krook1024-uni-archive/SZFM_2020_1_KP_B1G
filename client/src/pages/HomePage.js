@@ -3,6 +3,7 @@ import { Container, Spinner } from "react-bootstrap";
 import CarList from "../components/client/CarList";
 import { useRentalState, useRentalDispatch } from "../context/rental-context";
 
+
 export default function HomePage() {
   const { cars, cars_loading } = useRentalState();
   const dispatch = useRentalDispatch();
