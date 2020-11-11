@@ -4,6 +4,7 @@ import CarList from "../components/client/CarList";
 import { useRentalState, useRentalDispatch } from "../context/rental-context";
 import Login from "../components/client/Login";
 import axios from "axios";
+import NavBar from "../components/client/NavBar";
 
 export default function HomePage() {
   const { cars, cars_loading } = useRentalState();
@@ -21,10 +22,9 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ide kellene majd a navbar*/}
       <Container>
         <div>
-          <Login />
+          <NavBar />
         </div>
         <div>
           {cars_loading && <Spinner animation="grow" />}

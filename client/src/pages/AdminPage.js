@@ -15,9 +15,19 @@ const AdminPage = () => {
   return (
     <>
       <Admin dataProvider={dataProvider}>
-        <Resource name='users' list={UserList} edit={UserEdit} create={UserCreate} />
-        <Resource name='rents' list={RentList} />
-        <Resource name='cars' list={CarList} edit={CarEdit} create={CarCreate}/>
+        <Resource
+          name="users"
+          list={UserList}
+          edit={UserEdit}
+          create={UserCreate}
+        />
+        <Resource name="rents" list={RentList} />
+        <Resource
+          name="cars"
+          list={CarList}
+          edit={CarEdit}
+          create={CarCreate}
+        />
       </Admin>
     </>
   );

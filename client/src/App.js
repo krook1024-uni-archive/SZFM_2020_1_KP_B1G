@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { RentalProvider } from "./context/rental-context";
 import AdminPage from "./pages/AdminPage";
 import HomePage from "./pages/HomePage";
+import NavBar from "./components/client/NavBar";
 
 const App = () => {
   return (

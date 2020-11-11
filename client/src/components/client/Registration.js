@@ -23,22 +23,31 @@ const Registration = () => {
             <Form.Label>Név</Form.Label>
             <Form.Row>
               <Col>
-                <Form.Control placeholder="Vezetéknév" ref={lastName}/>
+                <Form.Control placeholder="Vezetéknév" ref={lastName} />
               </Col>
               <Col>
-                <Form.Control placeholder="Keresztnév" ref={firstName}/>
+                <Form.Control placeholder="Keresztnév" ref={firstName} />
               </Col>
             </Form.Row>
           </Form.Group>
           <Form.Group controlId="formEmail">
             <Form.Label>Email cím</Form.Label>
-            <Form.Control type="email" placeholder="Enter email.." ref={email}/>
+            <Form.Control
+              type="email"
+              placeholder="Enter email.."
+              ref={email}
+            />
             <Form.Text className="text-muted">pl: pelda@email.com</Form.Text>
           </Form.Group>
 
           <Form.Group controlId="formPassword">
             <Form.Label>Jelszó</Form.Label>
-            <Form.Control type="password" placeholder="Password" id="inputPassword" ref={password}/>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              id="inputPassword"
+              ref={password}
+            />
           </Form.Group>
           <Form.Group controlId="formLicenseType">
             <Form.Label>Jogosítvány típusa</Form.Label>
