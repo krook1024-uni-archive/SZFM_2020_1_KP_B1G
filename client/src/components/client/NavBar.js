@@ -11,7 +11,7 @@ class navBar extends React.Component{
     return (
 
       <Container>
-      <Navbar bg="light" variant="light">
+      <Navbar bg="dark" variant="dark">
          <Navbar.Brand href="#home">Cégünk neve</Navbar.Brand>
          <Button href="/">Car</Button>{' '}
          <Nav pullRight>
