@@ -31,9 +31,7 @@ export default function HomePage() {
             {cars_loading && <Spinner animation="grow" />}
             {!cars_loading && <CarList cars={cars} />}
           </Col>
-          <Col xs={12} md={3}>
-            <Login />
-          </Col>
+          <Col xs={12} md={3}></Col>
         </Row>
       </Container>
     </>
