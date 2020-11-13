@@ -45,6 +45,12 @@
       "model": "Impreza WRX STI",
       "productionYear": 2003,
       "createdAt": "2020-01-01 20:02:14",
+      "seatNumber": 5,
+      "color": "kék",
+      "mileage": 277000,
+      "fuelType": "benzin",
+      "gearboxType": "manuális",
+      "imgURL": "https://i.imgur.com/O83uz1V.jpg",
       "updatedAt": null,
       "deletedAt": null
     }
