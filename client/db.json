@@ -29,6 +29,12 @@
       "model": "Golf VII",
       "productionYear": 2013,
       "createdAt": "2020-01-01 20:02:14",
+      "seatNumber": 5,
+      "color": "fekete",
+      "mileage": 134000,
+      "fuel": "benzin",
+      "gearboxType": "automata",
+      "imgURL": null,
       "updatedAt": null,
       "deletedAt": null
     },

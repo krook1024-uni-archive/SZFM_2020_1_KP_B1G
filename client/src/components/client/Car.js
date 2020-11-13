@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Card, ListGroup } from "react-bootstrap";
+import { Card, ListGroup } from "react-bootstrap";
+import CarRent from "../client/CarRent"
 
 const Car = ({ car }) => {
   return (
@@ -13,7 +14,7 @@ const Car = ({ car }) => {
           <ListGroup.Item>Gyártási év: {car.productionYear}</ListGroup.Item>
         </ListGroup>
         <Card.Footer>
-          <Button variant="success">Bérlés</Button>
+          <CarRent car={car}/>
         </Card.Footer>
       </Card>
     </div>
