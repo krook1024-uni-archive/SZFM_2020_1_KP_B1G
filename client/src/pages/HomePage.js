@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { Container, Spinner, Row, Col } from "react-bootstrap";
-import CarList from "../components/client/CarList";
 import { useRentalState, useRentalDispatch } from "../context/rental-context";
-import Login from "../components/client/Login";
 import axios from "axios";
+import CarList from "../components/client/CarList";
 import NavBar from "../components/client/NavBar";
 
 export default function HomePage() {

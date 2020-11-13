@@ -3,19 +3,18 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { RentalProvider } from "./context/rental-context";
 import AdminPage from "./pages/AdminPage";
 import HomePage from "./pages/HomePage";
-import NavBar from "./components/client/NavBar";
 
 const App = () => {
   return (
     <>
       <Router>
         <Switch>
-          <Route exact path='/'>
+          <Route exact path="/">
             <RentalProvider>
               <HomePage />
             </RentalProvider>
           </Route>
-          <Route path='/admin'>
+          <Route path="/admin">
             <AdminPage />
           </Route>
         </Switch>

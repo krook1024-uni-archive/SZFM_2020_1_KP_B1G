@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Navbar, Button, Nav, NavDropdown } from "react-bootstrap";
-import { Container, Spinner } from "react-bootstrap";
+import { Navbar, Button, Nav, Container } from "react-bootstrap";
 import Login from "../client/Login";
 
 class navBar extends React.Component {
