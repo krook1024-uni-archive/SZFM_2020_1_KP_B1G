@@ -9,12 +9,12 @@ const App = () => {
     <>
       <Router>
         <Switch>
-          <Route exact path='/'>
+          <Route exact path="/">
             <RentalProvider>
               <HomePage />
             </RentalProvider>
           </Route>
-          <Route path='/admin'>
+          <Route path="/admin">
             <AdminPage />
           </Route>
         </Switch>

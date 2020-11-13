@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Container, Spinner, Row, Col } from "react-bootstrap";
-import CarList from "../components/client/CarList";
 import { useRentalState, useRentalDispatch } from "../context/rental-context";
-import Login from "../components/client/Login";
 import axios from "axios";
+import CarList from "../components/client/CarList";
+import NavBar from "../components/client/NavBar";
 
 export default function HomePage() {
   const { cars, cars_loading } = useRentalState();
@@ -21,16 +21,16 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ide kellene majd a navbar */}
       <Container>
+        <div>
+          <NavBar />
+        </div>
         <Row>
           <Col xs={12} md={9}>
             {cars_loading && <Spinner animation="grow" />}
             {!cars_loading && <CarList cars={cars} />}
           </Col>
-          <Col xs={12} md={3}>
-            <Login />
-          </Col>
+          <Col xs={12} md={3}></Col>
         </Row>
       </Container>
     </>
