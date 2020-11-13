@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Modal, Button, Form, Container, Col, Row, ListGroup } from "react-bootstrap";
+import {
+  Modal,
+  Button,
+  Form,
+  Container,
+  Col,
+  Row,
+  ListGroup,
+} from "react-bootstrap";
 
 const CarRent = ({ car }) => {
   const [show, setShow] = useState(false);
@@ -23,6 +31,7 @@ const CarRent = ({ car }) => {
           <Container>
             <Row>
               <Col>
+                <img src={car.imgURL} alt="carImg"></img>
                 <Form.Group>
                   <Form.Label>Bérlés kezdete</Form.Label>
                   <Form.Control type="date" />
@@ -41,9 +50,7 @@ const CarRent = ({ car }) => {
                   <ListGroup.Item>
                     Ülések száma: {car.seatNumber}
                   </ListGroup.Item>
-                  <ListGroup.Item>
-                    Szín: {car.color}
-                  </ListGroup.Item>
+                  <ListGroup.Item>Szín: {car.color}</ListGroup.Item>
                   <ListGroup.Item>
                     Üzemanyag típusa: {car.fuelType}
                   </ListGroup.Item>

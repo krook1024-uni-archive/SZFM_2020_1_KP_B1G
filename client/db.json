@@ -32,9 +32,9 @@
       "seatNumber": 5,
       "color": "fekete",
       "mileage": 134000,
-      "fuel": "benzin",
+      "fuelType": "benzin",
       "gearboxType": "automata",
-      "imgURL": null,
+      "imgURL": "https://i.imgur.com/ndpN0VT.jpeg",
       "updatedAt": null,
       "deletedAt": null
     },
