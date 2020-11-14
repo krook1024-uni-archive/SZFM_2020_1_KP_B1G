@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/krook1024/SZFM_2020_1_KP_B1G#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.3",
     "mongoose": "^5.10.14"
