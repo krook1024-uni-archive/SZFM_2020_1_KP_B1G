@@ -1,6 +1,15 @@
+const Car = require("../models/Car");
 const model = require("../models/Car");
 
 const carController = () => {
+    const insertOne = async (car) =>{
+        console.log("New Car Added", car)
+        const newCar = new Car(car)
+        await newCar.save()
+
+        return newCar
+    }
+
     const findOne = async (id) => {
         const car = await model.findById(id).exec();
 
@@ -17,6 +26,7 @@ const carController = () => {
     // todo: tobb fugveny
 
     return {
+        insertOne,
         findOne,
         findAll,
     };

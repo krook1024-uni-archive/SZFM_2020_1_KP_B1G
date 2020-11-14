@@ -1,10 +1,9 @@
-const mongoose = require("mongoose");
 const User = require("../models/User");
 const model = require("../models/User");
 
 const userController = () => {
   const insertOne = async (user) => {
-    console.log("new user is", user);
+    console.log("New User Added:", user);
     const newUser = new User(user);
     await newUser.save();
 
