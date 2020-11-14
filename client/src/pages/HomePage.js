@@ -10,7 +10,7 @@ export default function HomePage() {
   const dispatch = useRentalDispatch();
 
   useEffect(() => {
-    const url = "http://localhost:3004/cars";
+    const url = "/cars";
     axios
       .get(url)
       .then((response) => {
@@ -21,10 +21,8 @@ export default function HomePage() {
 
   return (
     <>
+      <NavBar />
       <Container>
-        <div>
-          <NavBar />
-        </div>
         <Row>
           <Col xs={12} md={9}>
             {cars_loading && <Spinner animation="grow" />}

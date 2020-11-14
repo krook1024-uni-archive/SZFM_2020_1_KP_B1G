@@ -8,7 +8,7 @@ const CarList = ({ cars }) => {
       <>
         <CardColumns>
           {cars.map((car) => (
-            <Car car={car} />
+            <Car car={car} key={car._id} />
           ))}
         </CardColumns>
       </>

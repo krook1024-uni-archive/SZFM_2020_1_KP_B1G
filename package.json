@@ -7,7 +7,11 @@
     "doc": "doc"
   },
   "scripts": {
-    "start": "nodemon index"
+    "start": "concurrently \"npm:watch\" \"npm:client-start\"",
+    "watch": "nodemon index",
+    "client-start": "npm --prefix=client start",
+    "client-build": "npm --prefix=client run build",
+    "lint": "eslint ./index.js ./routes ./models ./controllers"
   },
   "repository": {
     "type": "git",
@@ -20,12 +24,20 @@
   },
   "homepage": "https://github.com/krook1024/SZFM_2020_1_KP_B1G#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.3",
-    "mongoose": "^5.10.14"
+    "mongoose": "^5.10.14",
+    "passport": "^0.4.1",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
+    "eslint": "^6.6.0",
     "faker": "^5.1.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.6"
