@@ -24,9 +24,7 @@ const userController = () => {
 
   const updateOne = async (id, user) => {
     const value = new User(user);
-    const item = await model.findOne(
-      {_id: id,}
-    )
+    const item = await model.findOne({ _id: id });
     if (!item) console.log("user not found");
     const updatedUser = await model.updateOne(
       {
@@ -38,7 +36,7 @@ const userController = () => {
           email: value.email,
           password: value.password,
           dateOfBirth: value.dateOfBirth,
-          licenseCategory: value.licenseCategory
+          licenseCategory: value.licenseCategory,
         },
       }
     );
@@ -46,11 +44,17 @@ const userController = () => {
     return updatedUser;
   };
 
+  const deleteOne = async (id) => {
+    const deletedUser = await model.deleteOne({ _id: id });
+    return deletedUser;
+  };
+
   return {
     insertOne,
     findOne,
     findAll,
     updateOne,
+    deleteOne,
   };
 };
 
