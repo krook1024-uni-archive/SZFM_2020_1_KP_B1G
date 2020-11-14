@@ -19,4 +19,4 @@ const Rent = new mongoose.Schema({
     },
 });
 
-module.exports = Rent;
+module.exports = mongoose.model("RentModel", Rent);
