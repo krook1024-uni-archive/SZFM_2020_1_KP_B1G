@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import { Modal, Button, Form, Nav } from "react-bootstrap";
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -11,9 +9,9 @@ const Login = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Login
-      </Button>
+      <Nav.Item variant="primary">
+        <Nav.Link onClick={handleShow}>Login</Nav.Link>
+      </Nav.Item>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
