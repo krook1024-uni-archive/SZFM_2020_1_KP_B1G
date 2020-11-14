@@ -4,12 +4,13 @@ const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
+const passport = require("passport");
+const path = require("path");
+const cors = require("cors");
 
 require("dotenv").config();
 
 const port = process.env.PORT || 3004;
-
-console.log(`mongo_uri: ${process.env.MONGO_URI}`);
 
 const mongo_config = {
     auth: { authSource: "admin" },
@@ -21,22 +22,26 @@ mongoose
     .then(() => {
         console.log("MongoDB connected");
 
+        app.use(cors());
         app.use(morgan("tiny"));
         app.use(cookieParser());
         app.use(bodyParser.json());
+        app.use(passport.initialize());
 
-        app.get("/", (req, res) => {
-            res.json({ string: "hello world" });
-        });
-
-        const indexRouter = require("./routes/index");
+        // API ROUTES
         const carsRouter = require("./routes/cars");
         const usersRouter = require("./routes/users");
         const authRouter = require("./routes/auth");
-        app.use("/", indexRouter);
         app.use("/cars", carsRouter);
         app.use("/users", usersRouter);
         app.use("/auth", authRouter);
+
+        // STATIC ROUTES FOR REACT
+        app.use(express.static(path.join(__dirname, "client/build")));
+
+        app.get("/*", (req, res) => {
+            res.sendFile(path.join(__dirname, "client/build", "index.html"));
+        });
 
         app.listen(port, () => {
             console.log(`Listening on port: ${port}`);

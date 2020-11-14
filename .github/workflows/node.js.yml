@@ -27,7 +27,7 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js ${{ matrix.node-version }} for client
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
@@ -35,3 +35,11 @@ jobs:
       working-directory: ./client
     - run: npm run build --if-present
       working-directory: ./client
+    - name: Use Node.js ${{ matrix.node-version }} for server
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+      working-directory: ./
+    - run: npm run lint
+      working-directory: ./
