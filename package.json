@@ -1,0 +1,33 @@
+{
+  "name": "rental_server",
+  "version": "0.0.1",
+  "description": "Ez a nagy projektünk a Szoftverfejlesztési módszertanok tárgyhoz.",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krook1024/SZFM_2020_1_KP_B1G.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krook1024/SZFM_2020_1_KP_B1G/issues"
+  },
+  "homepage": "https://github.com/krook1024/SZFM_2020_1_KP_B1G#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.10.14"
+  },
+  "devDependencies": {
+    "faker": "^5.1.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6"
+  }
+}
