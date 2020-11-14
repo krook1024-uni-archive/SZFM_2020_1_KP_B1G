@@ -1,24 +1,33 @@
-const mongoose = require("mongoose")
-const model = require("../models/User")
+const mongoose = require("mongoose");
+const User = require("../models/User");
+const model = require("../models/User");
 
 const userController = () => {
-    const findOne = async (id) => {
-        const user = await model.findById(id).exec()
+  const insertOne = async (user) => {
+    console.log("new user is", user);
+    const newUser = new User(user);
+    await newUser.save();
 
-        return user
-    };
+    return newUser;
+  };
 
-    const findAll = async () => {
-        const users = await model.find().exec()
+  const findOne = async (id) => {
+    const user = await model.findById(id).exec();
 
-        return users 
-    };
+    return user;
+  };
 
-    return {
-        findOne,
-        findAll,
-    };
-    
+  const findAll = async () => {
+    const users = await model.find().exec();
+
+    return users;
+  };
+
+  return {
+    insertOne,
+    findOne,
+    findAll,
+  };
 };
 
-module.exports = userController
+module.exports = userController;
