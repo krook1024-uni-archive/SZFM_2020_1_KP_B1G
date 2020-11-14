@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const model = require("../models/Car");
 
 const carController = () => {
