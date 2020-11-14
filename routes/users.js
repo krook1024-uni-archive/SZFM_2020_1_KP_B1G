@@ -5,10 +5,10 @@ const userController = require("../controllers/userController")();
 
 // CREATE ONE
 router.post("/", (req, res) => {
-  const user = userController.insertOne(req.body).then((user)=> {
+  const user = userController.insertOne(req.body).then((user) => {
     res.json(user);
   });
-})
+});
 
 //READ ALL
 router.get("/", (req, res) => {
@@ -21,6 +21,14 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   const id = req.params.id;
   const user = userController.findOne(id).then((user) => {
+    res.json(user);
+  });
+});
+
+//UPDATE ONE
+router.put("/:id", (req, res) => {
+  const id = req.params.id;
+  const user = userController.updateOne(id, req.body).then((user) => {
     res.json(user);
   });
 });

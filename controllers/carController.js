@@ -23,12 +23,41 @@ const carController = () => {
         return cars;
     };
 
+    const updateOne = async (id, car) => {
+        const value = new Car(car);
+        const item = await model.findOne(
+          {_id: id,}
+        )
+        if (!item) console.log("car not found");
+        const updatedCar = await model.updateOne(
+          {
+            _id: id,
+          },
+          {
+            $set: {
+              plateNumber: value.plateNumber,
+              make: value.make,
+              model: value.model,
+              productionYear: value.productionYear,
+              seatNumber: value.seatNumber,
+              mileage: value.mileage,
+              color: value.color,
+              fuelType: value.fuelType,
+              gearboxType: value.gearboxType,
+              imgURL: value.imgURL
+            },
+          }
+        );
+    
+        return updatedCar;
+      };
     // todo: tobb fugveny
 
     return {
         insertOne,
         findOne,
         findAll,
+        updateOne
     };
 };
 

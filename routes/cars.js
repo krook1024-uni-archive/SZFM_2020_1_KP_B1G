@@ -25,4 +25,12 @@ router.get("/:id", (req, res) => {
     });
 });
 
+//UPDATE ONE
+router.put("/:id", (req, res) => {
+    const id = req.params.id;
+    const car = carController.updateOne(id, req.body).then((car) => {
+      res.json(car);
+    });
+  });
+
 module.exports = router;
