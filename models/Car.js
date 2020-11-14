@@ -18,11 +18,11 @@ const Car = new mongoose.Schema({
         required: true,
     },
     seatNumber: {
-        type: Integer,
+        type: Number,
         required: true,
     },
     mileage: {
-        type: Integer,
+        type: Number,
         required: true,
     },
     color: {
@@ -55,4 +55,4 @@ const Car = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model("CarModel", Car);
+module.exports = mongoose.model("car", Car);
