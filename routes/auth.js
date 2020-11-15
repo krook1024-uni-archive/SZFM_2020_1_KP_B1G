@@ -2,34 +2,28 @@ const express = require("express"),
     router = express.Router();
 
 const passport = require("passport");
-const model = require("../models/User");
-const { BasicStrategy } = require("passport-http");
 
-passport.use(
-    new BasicStrategy((email, password, done) => {
-        console.log(email, password, done);
-        model.findOne({ email, password }, (err, user) => {
-            if (err) {
-                console.log(err);
-                return done(err);
-            }
+passport.use(require("../controllers/authStrategy.js"));
+passport.use("admin", require("../controllers/authAdminStrategy.js"));
 
-            console.log(user);
-
-            if (!user) {
-                return done(null, false);
-            }
-
-            return done(null, user);
-        });
-    })
+router.post(
+    "/login",
+    passport.authenticate("basic", { session: false }),
+    (req, res) => {
+        // successful auth
+        // req.user contains the authenticated user
+        res.json(req.user);
+    }
 );
 
-router.post("/login", passport.authenticate("basic"), (req, res) => {
-    // successful auth
-    // req.user contains the authenticated user
-    console.log(req.user);
-    res.json({ status: 1 });
-});
+router.post(
+    "/login/admin",
+    passport.authenticate("admin", { session: false }),
+    (req, res) => {
+        // successful auth
+        // req.user contains the authenticated user
+        res.json(req.user);
+    }
+);
 
 module.exports = router;
