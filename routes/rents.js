@@ -40,3 +40,5 @@ router.delete("/:id", (req, res) => {
     res.json({ message: "Rent deleted!" });
   });
 });
+
+module.exports = router
