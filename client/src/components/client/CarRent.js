@@ -31,7 +31,7 @@ const CarRent = ({ car }) => {
           <Container>
             <Row>
               <Col>
-                <img src={car.imgURL} alt="carImg"></img>
+                <img src={car.imgURL} alt="carImg" width="100%"></img>
                 <Form.Group>
                   <Form.Label>Bérlés kezdete</Form.Label>
                   <Form.Control type="date" />
