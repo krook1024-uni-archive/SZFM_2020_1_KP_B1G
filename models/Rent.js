@@ -17,6 +17,14 @@ const Rent = new mongoose.Schema({
         type: Date,
         required: true,
     },
+    updatedAt: {
+        type: Date,
+        required: false,
+    },
+    deletedAt: {
+        type: Date,
+        required: false,
+    },
 });
 
 module.exports = mongoose.model("rent", Rent);

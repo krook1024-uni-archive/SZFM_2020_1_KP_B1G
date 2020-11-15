@@ -32,8 +32,28 @@ const rentController = () => {
     }
   };
 
-  const updateOne = (rent, id) => {
-    // TODO
+  const updateOne = async (id, rent) => {
+    try {
+      const value = new Rent(rent);
+      const updateTime = new Date();
+      const updatedRent = await model.updateOne(
+        {
+          _id: id,
+        },
+        {
+          $set: {
+            carId: value.carId,
+            userId: value.userId,
+            startTime: value.startTime,
+            finishTime: value.finishTime,
+            updatedAt: updateTime,
+          },
+        }
+      );
+      return updatedRent;
+    } catch (error) {
+      console.log(`Update error: Rent with id: ${id} not found`);
+    }
   };
 
   const deleteOne = (id) => {
