@@ -7,7 +7,6 @@ const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const path = require("path");
 const cors = require("cors");
-const rentController = require("./controllers/rentController");
 
 require("dotenv").config();
 
