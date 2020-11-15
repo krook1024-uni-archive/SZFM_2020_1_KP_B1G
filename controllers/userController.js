@@ -23,7 +23,7 @@ const userController = () => {
 
   const findAll = async () => {
     try {
-      const users = await model.find().exec();
+      const users = await model.find({deletedAt: null}).exec();
       return users;
     } catch (error) {
       console.log("No users found");
