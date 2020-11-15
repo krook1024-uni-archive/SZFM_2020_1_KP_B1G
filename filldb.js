@@ -19,6 +19,7 @@ var db = mongoose.connection;
 db.once("open", () => {
     const UserModel = require("./models/User");
     const CarModel = require("./models/Car");
+    const RentModel = require("./models/Rent")
 
     var users = [];
     for (var i = 0; i < 50; i++) {
@@ -60,6 +61,22 @@ db.once("open", () => {
     }
 
     CarModel.insertMany(cars, (error, docs) => {
+        console.log(error, docs);
+    });
+
+    var rents = []
+    for(var i=0; i< 3; i++){
+        rents = [
+            ...rents,
+            {
+                carId: "5fb0069d4940301fe24bf3e6",
+                userId: "5fb0069d4940301fe24bf3b7",
+                startTime: faker.date.past(),
+                finishTime: faker.date.future()
+            }
+        ];
+    }
+    RentModel.insertMany(rents, (error, docs) => {
         console.log(error, docs);
         mongoose.disconnect();
     });

@@ -32,9 +32,11 @@ mongoose
         const carsRouter = require("./routes/cars");
         const usersRouter = require("./routes/users");
         const authRouter = require("./routes/auth");
+        const rentsRouter = require("./routes/rents");
         app.use("/cars", carsRouter);
         app.use("/users", usersRouter);
         app.use("/auth", authRouter);
+        app.use("/rents", rentsRouter)
 
         // STATIC ROUTES FOR REACT
         app.use(express.static(path.join(__dirname, "client/build")));
