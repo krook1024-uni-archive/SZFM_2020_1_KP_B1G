@@ -4,15 +4,15 @@ const express = require("express"),
 const userController = require("../controllers/userController")();
 
 // CREATE ONE
-router.post("/", (req, res, next) => {
-  const user = userController.insertOne(req.body).then((user) => {
+router.post("/", (req, res) => {
+  userController.insertOne(req.body).then((user) => {
     res.json(user);
   });
 });
 
 //READ ALL
 router.get("/", (req, res) => {
-  const users = userController.findAll().then((users) => {
+  userController.findAll().then((users) => {
     res.json(users);
   });
 });
@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
 //READ ONE
 router.get("/:id", (req, res) => {
   const id = req.params.id;
-  const user = userController.findOne(id).then((user) => {
+  userController.findOne(id).then((user) => {
     res.json(user);
   });
 });
@@ -28,7 +28,7 @@ router.get("/:id", (req, res) => {
 //UPDATE ONE
 router.put("/:id", (req, res) => {
   const id = req.params.id;
-  const user = userController.updateOne(id, req.body).then((user) => {
+  userController.updateOne(id, req.body).then((user) => {
     res.json(user);
   });
 });
@@ -36,7 +36,7 @@ router.put("/:id", (req, res) => {
 // DELETE ONE
 router.delete("/:id", (req, res) => {
   const id = req.params.id;
-  const user = userController.deleteOne(id).then((user) => {
+  userController.deleteOne(id).then(() => {
     res.json({ message: "User deleted!" });
   });
 });

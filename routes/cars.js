@@ -5,7 +5,7 @@ const carController = require("../controllers/carController")();
 
 //CREATE ONE
 router.post("/", (req, res) => {
-  const car = carController.insertOne(req.body).then((car) => {
+  carController.insertOne(req.body).then((car) => {
     res.json(car);
   });
 });
@@ -28,7 +28,7 @@ router.get("/:id", (req, res) => {
 //UPDATE ONE
 router.put("/:id", (req, res) => {
   const id = req.params.id;
-  const car = carController.updateOne(id, req.body).then((car) => {
+  carController.updateOne(id, req.body).then((car) => {
     res.json(car);
   });
 });
@@ -36,7 +36,7 @@ router.put("/:id", (req, res) => {
 // DELETE ONE
 router.delete("/:id", (req, res) => {
   const id = req.params.id;
-  const car = carController.deleteOne(id).then((car) => {
+  carController.deleteOne(id).then(() => {
     res.json({ message: "Car deleted!" });
   });
 });
