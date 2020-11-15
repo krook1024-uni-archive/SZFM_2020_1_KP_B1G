@@ -9,12 +9,14 @@ import CarEdit from "../components/admin/CarEdit";
 import CarCreate from "../components/admin/CarCreate";
 import UserCreate from "../components/admin/UserCreate";
 
+import authProvider from '../admin/authProvider.js';
+
 const dataProvider = jsonServerProvider("http://localhost:3004"); // todo: move this to a config
 
 const AdminPage = () => {
   return (
     <>
-      <Admin dataProvider={dataProvider}>
+      <Admin dataProvider={dataProvider} authProvider={authProvider}>
         <Resource
           name="users"
           list={UserList}
