@@ -36,6 +36,7 @@ const carController = () => {
   const updateOne = async (id, car) => {
     try {
       const value = new Car(car);
+      const updateTime = new Date();
       const updatedCar = await model.updateOne(
         {
           _id: id,
@@ -52,6 +53,7 @@ const carController = () => {
             fuelType: value.fuelType,
             gearboxType: value.gearboxType,
             imgURL: value.imgURL,
+            updatedAt: updateTime
           },
         }
       );
@@ -64,7 +66,17 @@ const carController = () => {
 
   const deleteOne = async (id) => {
     try {
-      const deletedCar = await model.deleteOne({ _id: id });
+      const deleteTime = new Date();
+      const deletedCar = await model.updateOne(
+        {
+          _id: id,
+        },
+        {
+          $set: {
+            deletedAt: deleteTime
+          },
+        }
+      );
       return deletedCar;
     } catch (error) {
       console.log(`Delete error: Car with id: ${id} not found`);

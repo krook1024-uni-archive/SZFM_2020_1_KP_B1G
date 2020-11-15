@@ -33,6 +33,7 @@ const userController = () => {
   const updateOne = async (id, user) => {
     try {
       const value = new User(user);
+      const updateTime = new Date();
       const updatedUser = await model.updateOne(
         {
           _id: id,
@@ -44,6 +45,7 @@ const userController = () => {
             password: value.password,
             dateOfBirth: value.dateOfBirth,
             licenseCategory: value.licenseCategory,
+            updatedAt: updateTime
           },
         }
       );
@@ -56,7 +58,18 @@ const userController = () => {
 
   const deleteOne = async (id) => {
     try {
-      const deletedUser = await model.deleteOne({ _id: id });
+      const deleteTime = new Date();
+      const deletedUser = await model.updateOne(
+        {
+          _id: id,
+        },
+        {
+          $set: {
+            deletedAt: deleteTime
+          },
+        }
+      );
+
       return deletedUser;
     } catch (error) {
       console.log(`Delete error: User with id: ${id} not found`);
