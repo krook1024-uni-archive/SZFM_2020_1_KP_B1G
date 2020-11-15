@@ -26,7 +26,7 @@ const carController = () => {
 
   const findAll = async () => {
     try {
-      const cars = await model.find().exec();
+      const cars = await model.find({deletedAt: null}).exec();
       return cars;
     } catch (error) {
       console.log("No cars found.");
