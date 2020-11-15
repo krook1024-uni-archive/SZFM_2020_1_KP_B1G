@@ -9,8 +9,13 @@ const rentController = () => {
     // TODO
   };
 
-  const findAll = () => {
-    // TODO
+  const findAll = async () => {
+    try {
+      const rents = await model.find().exec();
+      return rents;
+    } catch (error) {
+      console.log("No rents found.");
+    }
   };
 
   const updateOne = (rent, id) => {
