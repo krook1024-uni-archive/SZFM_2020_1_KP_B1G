@@ -4,7 +4,7 @@ const express = require("express"),
 const userController = require("../controllers/userController")();
 
 // CREATE ONE
-router.post("/", (req, res) => {
+router.post("/", (req, res, next) => {
   const user = userController.insertOne(req.body).then((user) => {
     res.json(user);
   });
@@ -33,12 +33,12 @@ router.put("/:id", (req, res) => {
   });
 });
 
-// DELETE ONE 
-router.delete("/:id", (req,res) =>{
+// DELETE ONE
+router.delete("/:id", (req, res) => {
   const id = req.params.id;
-  const user = userController.deleteOne(id).then((user)=>{
-    res.json({message: "User deleted!"})
-  })
-})
+  const user = userController.deleteOne(id).then((user) => {
+    res.json({ message: "User deleted!" });
+  });
+});
 
 module.exports = router;
