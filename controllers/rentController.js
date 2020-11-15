@@ -56,8 +56,23 @@ const rentController = () => {
     }
   };
 
-  const deleteOne = (id) => {
-    // TODO
+  const deleteOne = async (id) => {
+    try {
+      const deleteTime = new Date();
+      const deletedRent = await model.updateOne(
+        {
+          _id: id,
+        },
+        {
+          $set: {
+            deletedAt: deleteTime,
+          },
+        }
+      );
+      return deletedRent;
+    } catch (error) {
+      console.log(`Delete error: Rent with id: ${id} not found`);
+    }
   };
 
   return {
