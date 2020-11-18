@@ -8,6 +8,19 @@ const User = new mongoose.Schema({
     email: {
         type: String,
         required: true,
+        validate: {
+            validator: async function (email) {
+                const user = await this.constructor.findOne({ email });
+                if (user) {
+                    if (this.id === user.id) {
+                        return true;
+                    }
+                    return false;
+                }
+                return true;
+            },
+            message: "Ez az e-mail cim mar hasznalatban van!",
+        },
     },
     password: {
         type: String,
