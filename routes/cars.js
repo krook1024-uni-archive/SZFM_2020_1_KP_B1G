@@ -1,14 +1,21 @@
 const express = require("express"),
-  router = express.Router();
+  router = express.Router(),
+  passport = require("passport");
 
 const carController = require("../controllers/carController")();
 
+passport.use("admin", require("../controllers/authAdminStrategy.js"));
+
 //CREATE ONE
-router.post("/", (req, res) => {
-  carController.insertOne(req.body).then((car) => {
-    res.json(car);
-  });
-});
+router.post(
+  "/",
+  passport.authenticate("basic", { session: false }),
+  (req, res) => {
+    carController.insertOne(req.body).then((car) => {
+      res.json(car);
+    });
+  }
+);
 
 //READ ALL
 router.get("/", (req, res) => {
@@ -26,19 +33,27 @@ router.get("/:id", (req, res) => {
 });
 
 //UPDATE ONE
-router.put("/:id", (req, res) => {
-  const id = req.params.id;
-  carController.updateOne(id, req.body).then((car) => {
-    res.json(car);
-  });
-});
+router.put(
+  "/:id",
+  passport.authenticate("basic", { session: false }),
+  (req, res) => {
+    const id = req.params.id;
+    carController.updateOne(id, req.body).then((car) => {
+      res.json(car);
+    });
+  }
+);
 
 // DELETE ONE
-router.delete("/:id", (req, res) => {
-  const id = req.params.id;
-  carController.deleteOne(id).then(() => {
-    res.json({ message: "Car deleted!" });
-  });
-});
+router.delete(
+  "/:id",
+  passport.authenticate("basic", { session: false }),
+  (req, res) => {
+    const id = req.params.id;
+    carController.deleteOne(id).then(() => {
+      res.json({ message: "Car deleted!" });
+    });
+  }
+);
 
 module.exports = router;
