@@ -1,47 +1,46 @@
 import React, { useReducer } from "react";
-import authStrategy from "../../../controllers/authStrategy";
 
 const UserStateContext = React.createContext();
 const UserDispatchContext = React.createContext();
 
-const userReducer = (state, action) => {
-  const auth = true;
+const userReducer = (initialState, action) => {
   switch (action.type) {
-    case "auth_user": {
-      // TODO implement real authentication
-      if (auth) {
-        return {
-          ...state,
-          user: action.payload,
-          has_auth: true,
-          error_msg: "",
-        };
-      } else {
-        return {
-          ...state,
-          user: null,
-          has_auth: false,
-          error_msg: "Authentication failed",
-        };
-      }
-    }
-    case "deauth_user": {
+    case "REQUEST_LOGIN":
       return {
-        ...state,
+        ...initialState,
+        loading: true,
+      };
+    case "LOGIN_SUCCESS":
+      return {
+        ...initialState,
+        user: action.payload.user,
+        has_auth: true,
+        error_msg: "",
+        loading: false,
+      };
+    case "LOGOUT":
+      return {
+        ...initialState,
         user: null,
         has_auth: false,
         error_msg: "",
       };
-    }
-    default: {
-      return state;
-    }
+
+    case "LOGIN_ERROR":
+      return {
+        ...initialState,
+        loading: false,
+        errorMessage: action.error,
+      };
+
+    default:
+      throw new Error(`Unhandled action type: ${action.type}`);
   }
 };
 
 const UserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(userReducer, {
-    user: null
+    user: null, has_auth: false, error_msg = '', loading=true
   });
 
   return (
