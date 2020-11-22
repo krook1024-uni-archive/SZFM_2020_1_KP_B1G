@@ -25,17 +25,17 @@ export const UserCreate = (props) => (
       <TextInput source="name" label={labelName} helperText={helpName} />
       <TextInput source="email" label={labelEmail} helperText={helpEmail} />
       <PasswordInput
-        source="passord"
+        source="password"
         label={labelPassword}
         helperText={helpPassword}
       />
       <DateInput
-        source="date_of_birth"
+        source="dateOfBirth"
         label={labelDateOfBirth}
         helperText={helpDateOfBirth}
       />
       <TextInput
-        source="license_category"
+        source="licenseCategory"
         label={labelLicenseCategory}
         helperText={helpLicenseCategory}
       />

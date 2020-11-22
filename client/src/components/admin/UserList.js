@@ -12,11 +12,8 @@ export const UserList = (props) => {
   return (
     <List {...props}>
       <Datagrid>
-        <TextField source="id"></TextField>
         <TextField source="email"></TextField>
-        <TextField source="password"></TextField>
-        <DateField source="dateOfBirth"></DateField>
-        <TextField source="licenseCategory"></TextField>
+        <TextField source="name"></TextField>
         <DateField source="createdAt"></DateField>
         <EditButton basePath="/users"></EditButton>
         <DeleteButton basePath="/users"></DeleteButton>
