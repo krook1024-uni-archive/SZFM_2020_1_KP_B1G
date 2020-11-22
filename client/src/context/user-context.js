@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useReducer } from "react";
 
 const UserStateContext = React.createContext();
@@ -5,34 +6,42 @@ const UserDispatchContext = React.createContext();
 
 const userReducer = (initialState, action) => {
   switch (action.type) {
-    case "REQUEST_LOGIN":
+    case "auth_user":
+      const login = async (username, password) => {
+        const response = await axios.post(
+          "http://localhost:3004/auth/login/",
+          null,
+          {
+            auth: {
+              username,
+              password,
+            },
+          }
+        );
+      };
+      try {
+        localStorage.setItem("username", response.data.username);
+        localStorage.setItem("password", response.data.password);
+        Promise.resolve();
+        return {
+          ...initialState,
+          user: response.data,
+          has_auth: true,
+          error_msg: "",
+          loading: false,
+        };
+      } catch (err) {
+        Promise.reject();
+        return {
+          ...initialState,
+        };
+      }
+    case "deauth_user":
+      localStorage.removeItem("usename", user.username);
+      localStorage.removeItem("password", user.password);
       return {
         ...initialState,
-        loading: true,
       };
-    case "LOGIN_SUCCESS":
-      return {
-        ...initialState,
-        user: action.payload.user,
-        has_auth: true,
-        error_msg: "",
-        loading: false,
-      };
-    case "LOGOUT":
-      return {
-        ...initialState,
-        user: null,
-        has_auth: false,
-        error_msg: "",
-      };
-
-    case "LOGIN_ERROR":
-      return {
-        ...initialState,
-        loading: false,
-        errorMessage: action.error,
-      };
-
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }
@@ -40,7 +49,10 @@ const userReducer = (initialState, action) => {
 
 const UserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(userReducer, {
-    user: null, has_auth: false, error_msg = '', loading=true
+    user: null,
+    has_auth: false,
+    error_msg: "",
+    loading: true,
   });
 
   return (
