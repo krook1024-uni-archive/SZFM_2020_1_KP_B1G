@@ -1,8 +1,16 @@
 import axios from "axios";
-import React, { useReducer } from "react";
+import React from "react";
+import useReducerWithSideEffects, {
+  Update,
+  NoUpdate,
+  SideEffect,
+} from "use-reducer-with-side-effects";
 
 const UserStateContext = React.createContext("default");
 const UserDispatchContext = React.createContext("default");
+
+UserStateContext.displayName = "UserStateContext";
+UserDispatchContext.displayName = "UserDispatchContext";
 
 const login = async (username, password) => {
   const response = await axios.post("http://localhost:3004/auth/login/", null, {
@@ -25,38 +33,44 @@ const login = async (username, password) => {
 const userReducer = (initialState, action) => {
   switch (action.type) {
     case "auth_user":
-      login(action.payload.email, action.payload.password)
-        .then((resp) => {
-          return {
-            ...initialState,
-            user: resp,
-            has_auth: true,
-            error_msg: "",
-            loading: false,
-          };
-        })
-        .catch(() => {
-          return {
-            ...initialState,
-            user: null,
-            has_auth: false,
-            error_msg: "Authentication failed",
-            loading: false
-          };
-        });
-      break;
-    case "deauth_user":
-      localStorage.clear();
+      return SideEffect((_, dispatch) => {
+        login(action.payload.email, action.payload.password)
+          .then((resp) => {
+            dispatch({ type: "set_user", payload: resp });
+          })
+          .catch((err) => {
+            dispatch({ type: "fail_user" });
+          });
+      });
+    case "set_user":
+      return Update({
+        ...initialState,
+        user: action.payload,
+        has_auth: true,
+        error_msg: "",
+        loading: false,
+      });
+    case "fail_user": {
       return {
         ...initialState,
+        user: null,
+        has_auth: false,
+        error_msg: "Authentication failed",
+        loading: false,
       };
+    }
+    case "deauth_user":
+      localStorage.clear();
+      return Update({
+        ...initialState,
+      });
     default:
-      return initialState;
+      return NoUpdate();
   }
 };
 
-const UserProvider = ({children}) => {
-  const [state, dispatch] = useReducer(userReducer, {
+const UserProvider = ({ children }) => {
+  const [state, dispatch] = useReducerWithSideEffects(userReducer, {
     user: null,
     has_auth: false,
     error_msg: "",

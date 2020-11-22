@@ -12,7 +12,7 @@ const HomePage = () => {
   const { cars, cars_loading } = useRentalState();
   const dispatch = useRentalDispatch();
   const [page, setPage] = useState(0);
-  const [loader, inView] = useInView({ threshold: 0 });
+  const [loader, inView] = useInView({ threshold: 1 });
 
   useEffect(() => {
     let start = page >= 1 ? page * PER_PAGE : 0;

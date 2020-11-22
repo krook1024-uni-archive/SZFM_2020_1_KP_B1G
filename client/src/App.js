@@ -4,19 +4,23 @@ import { RentalProvider } from "./context/rental-context";
 import { UserProvider } from "./context/user-context";
 import AdminPage from "./pages/AdminPage";
 import HomePage from "./pages/HomePage";
+import Profile from "./pages/Profile";
 
 const App = () => {
   return (
     <>
       <Router>
         <Switch>
-          <Route exact path="/">
-            <UserProvider>
-              <RentalProvider>
+          <UserProvider>
+            <RentalProvider>
+              <Route exact path="/">
                 <HomePage />
-              </RentalProvider>
-            </UserProvider>
-          </Route>
+              </Route>
+              <Route exact path="/profile">
+                <Profile />
+              </Route>
+            </RentalProvider>
+          </UserProvider>
           <Route path="/admin">
             <AdminPage />
           </Route>
