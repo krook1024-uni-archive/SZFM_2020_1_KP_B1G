@@ -1,6 +1,5 @@
 import React from "react";
 import { fetchUtils, Admin, Resource } from "react-admin";
-import jsonServerProvider from "ra-data-json-server";
 import UserList from "../components/admin/UserList";
 import UserEdit from "../components/admin/UserEdit";
 import RentList from "../components/admin/RentList";
@@ -9,21 +8,24 @@ import CarEdit from "../components/admin/CarEdit";
 import CarCreate from "../components/admin/CarCreate";
 import UserCreate from "../components/admin/UserCreate";
 
-import authProvider from "../admin/authProvider.js";
+import authProvider from "../admin/authProvider";
+import rentalDataProvider from "../admin/rentalDataProvider";
 
 const httpClient = (url, options = {}) => {
   if (!options.headers) {
     options.headers = new Headers({ Accept: "appplication/json" });
     const username = localStorage.getItem("username"),
       password = localStorage.getItem("password");
-    const authString = `Basic ${btoa(`${username}:${password}`).replace('=', '')}`;
-    console.log(authString);
+    const authString = `Basic ${btoa(`${username}:${password}`).replace(
+      "=",
+      ""
+    )}`;
     options.headers.set("Authorization", authString);
     return fetchUtils.fetchJson(url, options);
   }
 };
 
-const dataProvider = jsonServerProvider("http://localhost:3004", httpClient); // todo: move this to a config
+const dataProvider = rentalDataProvider("http://localhost:3004", httpClient);
 
 const AdminPage = () => {
   return (
