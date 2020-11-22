@@ -4,46 +4,54 @@ import React, { useReducer } from "react";
 const UserStateContext = React.createContext();
 const UserDispatchContext = React.createContext();
 
+const login = async (username, password) => {
+  const response = await axios.post("http://localhost:3004/auth/login/", null, {
+    auth: {
+      username,
+      password,
+    },
+  });
+  return new Promise((resolve, reject) => {
+    try {
+      localStorage.setItem("username", response.data.email);
+      localStorage.setItem("password", response.data.password);
+      resolve(response.data);
+    } catch (err) {
+      reject("auth failed");
+    }
+  });
+};
+
 const userReducer = (initialState, action) => {
   switch (action.type) {
     case "auth_user":
-      const login = async (username, password) => {
-        const response = await axios.post(
-          "http://localhost:3004/auth/login/",
-          null,
-          {
-            auth: {
-              username,
-              password,
-            },
-          }
-        );
-      };
-      try {
-        localStorage.setItem("username", response.data.username);
-        localStorage.setItem("password", response.data.password);
-        Promise.resolve();
-        return {
-          ...initialState,
-          user: response.data,
-          has_auth: true,
-          error_msg: "",
-          loading: false,
-        };
-      } catch (err) {
-        Promise.reject();
-        return {
-          ...initialState,
-        };
-      }
+      login(action.payload.email, action.payload.password)
+        .then((resp) => {
+          return {
+            ...initialState,
+            user: resp,
+            has_auth: true,
+            error_msg: "",
+            loading: false,
+          };
+        })
+        .catch(() => {
+          return {
+            ...initialState,
+            user: null,
+            has_auth: false,
+            error_msg: "Authentication failed",
+            loading: false
+          };
+        });
+      break;
     case "deauth_user":
-      localStorage.removeItem("usename", user.username);
-      localStorage.removeItem("password", user.password);
+      localStorage.clear();
       return {
         ...initialState,
       };
     default:
-      throw new Error(`Unhandled action type: ${action.type}`);
+      return initialState;
   }
 };
 
