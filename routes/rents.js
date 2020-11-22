@@ -2,6 +2,9 @@ const express = require("express"),
   router = express.Router(),
   passport = require("passport");
 
+const rentModel = require('../models/Rent');
+const paginate = require('../middlewares/paginate');
+
 const rentController = require("../controllers/rentController")();
 
 passport.use("admin", require("../controllers/authStrategy.js"));
@@ -22,8 +25,9 @@ router.post(
 router.get(
   "/",
   passport.authenticate("admin", { session: false }),
+  paginate(rentModel),
   (req, res) => {
-    rentController.findAll().then((rents) => {
+    rentController.findAll(req.sorting).then((rents) => {
       res.json(rents);
     });
   }

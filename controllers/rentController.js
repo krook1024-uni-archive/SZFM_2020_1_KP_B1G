@@ -23,9 +23,11 @@ const rentController = () => {
     }
   };
 
-  const findAll = async () => {
+  const findAll = async (sorting = null) => {
     try {
-      const rents = await model.find({deletedAt: null}).exec();
+      const rents = await model
+        .find({ deletedAt: null }, null, { ...sorting })
+        .exec();
       return rents;
     } catch (error) {
       console.log("No rents found.");

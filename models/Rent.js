@@ -27,4 +27,10 @@ const Rent = new mongoose.Schema({
     },
 });
 
+Rent.virtual("id").get(function () {
+    return this._id.toHexString();
+});
+
+Rent.set("toJSON", { virtuals: true });
+
 module.exports = mongoose.model("rent", Rent);
