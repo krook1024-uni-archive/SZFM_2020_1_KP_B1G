@@ -12,8 +12,8 @@ export const CarList = (props) => {
   return (
     <List {...props}>
       <Datagrid>
-        <TextField source="make"></TextField>
         <TextField source="plateNumber"></TextField>
+        <TextField source="make"></TextField>
         <TextField source="model"></TextField>
         <DateField source="productionYear"></DateField>
         <EditButton basePath="/cars"></EditButton>
