@@ -24,9 +24,11 @@ const carController = () => {
     }
   };
 
-  const findAll = async () => {
+  const findAll = async (sorting = null) => {
     try {
-      const cars = await model.find({deletedAt: null}).exec();
+      const cars = await model
+        .find({ deletedAt: null }, null, { ...sorting })
+        .exec();
       return cars;
     } catch (error) {
       console.log("No cars found.");
@@ -53,7 +55,7 @@ const carController = () => {
             fuelType: value.fuelType,
             gearboxType: value.gearboxType,
             imgURL: value.imgURL,
-            updatedAt: updateTime
+            updatedAt: updateTime,
           },
         }
       );
@@ -73,7 +75,7 @@ const carController = () => {
         },
         {
           $set: {
-            deletedAt: deleteTime
+            deletedAt: deleteTime,
           },
         }
       );

@@ -12,7 +12,6 @@ export const RentList = (props) => {
   return (
     <List {...props}>
       <Datagrid>
-        <TextField source="id"></TextField>
         <TextField label='CarID' source="carId"></TextField>
         <TextField label='UserID' source="userId"></TextField>
         <DateField source="startTime"></DateField>

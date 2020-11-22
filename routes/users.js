@@ -3,6 +3,8 @@ const express = require("express"),
   passport = require("passport");
 
 const userController = require("../controllers/userController")();
+const userModel = require('../models/User');
+const paginate = require('../middlewares/paginate');
 
 passport.use("admin", require("../controllers/authAdminStrategy.js"));
 
@@ -21,8 +23,9 @@ router.post(
 router.get(
   "/",
   passport.authenticate("admin", { session: false }),
+  paginate(userModel),
   (req, res) => {
-    userController.findAll().then((users) => {
+    userController.findAll(req.sorting).then((users) => {
       res.json(users);
     });
   }
