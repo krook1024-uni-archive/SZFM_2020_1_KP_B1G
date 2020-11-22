@@ -55,4 +55,10 @@ const Car = new mongoose.Schema({
     },
 });
 
+Car.virtual("id").get(function () {
+    return this._id.toHexString();
+});
+
+Car.set("toJSON", { virtuals: true });
+
 module.exports = mongoose.model("car", Car);

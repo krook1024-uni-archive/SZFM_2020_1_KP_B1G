@@ -8,7 +8,7 @@ const userController = () => {
       await newUser.save();
       return newUser;
     } catch (error) {
-      console.log("User validation failed");
+      console.log("User validation failed", error);
     }
   };
 
@@ -21,11 +21,14 @@ const userController = () => {
     }
   };
 
-  const findAll = async () => {
+  const findAll = async (sorting = null) => {
     try {
-      const users = await model.find({deletedAt: null}).exec();
+      const users = await model
+        .find({ deletedAt: null }, null, { ...sorting })
+        .exec();
       return users;
     } catch (error) {
+      console.log(error);
       console.log("No users found");
     }
   };
@@ -45,7 +48,7 @@ const userController = () => {
             password: value.password,
             dateOfBirth: value.dateOfBirth,
             licenseCategory: value.licenseCategory,
-            updatedAt: updateTime
+            updatedAt: updateTime,
           },
         }
       );
@@ -65,7 +68,7 @@ const userController = () => {
         },
         {
           $set: {
-            deletedAt: deleteTime
+            deletedAt: deleteTime,
           },
         }
       );

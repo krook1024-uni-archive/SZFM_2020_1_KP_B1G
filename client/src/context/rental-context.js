@@ -14,6 +14,14 @@ const rentalReducer = (state, action) => {
         cars: action.payload,
       };
     }
+    case "add_to_cars": {
+      const cars = state.cars.concat(action.payload);
+      return {
+        ...state,
+        cars_loading: false,
+        cars: cars.filter((item, pos) => cars.indexOf(item) === pos),
+      };
+    }
     default: {
       return state;
     }

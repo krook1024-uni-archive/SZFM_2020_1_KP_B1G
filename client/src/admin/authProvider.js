@@ -14,7 +14,7 @@ const authProvider: AuthProvider = {
       }
     );
     try {
-      localStorage.setItem("username", response.data.username);
+      localStorage.setItem("username", response.data.email);
       localStorage.setItem("password", response.data.password);
       return Promise.resolve();
     } catch (err) {

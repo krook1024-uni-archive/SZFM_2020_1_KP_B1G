@@ -1,36 +1,53 @@
-import React, { useEffect } from "react";
-import { Container, Spinner, Row, Col } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Spinner } from "react-bootstrap";
 import { useRentalState, useRentalDispatch } from "../context/rental-context";
 import axios from "axios";
 import CarList from "../components/client/CarList";
 import NavBar from "../components/client/NavBar";
+import { useInView } from "react-intersection-observer";
 
-export default function HomePage() {
+const PER_PAGE = 25;
+
+const HomePage = () => {
   const { cars, cars_loading } = useRentalState();
   const dispatch = useRentalDispatch();
+  const [page, setPage] = useState(0);
+  const [loader, inView] = useInView({ threshold: 0 });
 
   useEffect(() => {
-    const url = "/cars";
+    let start = page >= 1 ? page * PER_PAGE : 0;
+    let end = start + PER_PAGE - 1;
+    const url = `http://localhost:3004/cars?_start=${start}&_end=${end}&_order=ASC&_sort=make`;
     axios
       .get(url)
       .then((response) => {
-        dispatch({ type: "set_cars", payload: response.data });
+        dispatch({ type: "add_to_cars", payload: response.data });
       })
       .catch((err) => console.log(err));
-  }, [dispatch]);
+  }, [dispatch, page]);
+
+  useEffect(() => {
+    if (inView) {
+      setPage((page) => page + 1);
+    }
+  }, [inView]);
 
   return (
     <>
       <NavBar />
       <Container>
-        <Row>
-          <Col xs={12} md={9}>
-            {cars_loading && <Spinner animation="grow" />}
-            {!cars_loading && <CarList cars={cars} />}
-          </Col>
-          <Col xs={12} md={3}></Col>
-        </Row>
+        {cars_loading && <Spinner animation="grow" />}
+        {!cars_loading && (
+          <>
+            <CarList cars={cars} />
+            <div className="text-center my-5" ref={loader}>
+              <h2>Load more...</h2>
+            </div>
+          </>
+        )}
       </Container>
     </>
   );
-}
+};
+
+export default HomePage;
