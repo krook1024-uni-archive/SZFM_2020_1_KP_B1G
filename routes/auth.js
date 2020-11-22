@@ -1,3 +1,4 @@
+const authController = require("../controllers/authController")();
 const express = require("express"),
     router = express.Router();
 
@@ -25,5 +26,9 @@ router.post(
         res.json(req.user);
     }
 );
+
+router.post("/register", async (req, res) => {
+    res.json(await authController.register(req.body));
+});
 
 module.exports = router;
