@@ -101,4 +101,8 @@ db.once("open", async () => {
             }
         });
     };
+
+    insertUsers();
+    insertCars();
+    insertRents();
 });
