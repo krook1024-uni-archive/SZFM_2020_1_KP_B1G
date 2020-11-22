@@ -6,9 +6,8 @@ import AdminPage from "./pages/AdminPage";
 import HomePage from "./pages/HomePage";
 import Profile from "./pages/Profile";
 
-import { useUserState, useUserDispatch } from "./context/user-context";
+import { useUserDispatch } from "./context/user-context";
 const CheckLogin = () => {
-  const userState = useUserState();
   const userDispatch = useUserDispatch();
 
   useEffect(() => {
