@@ -22,7 +22,7 @@ mongoose
     .then(() => {
         console.log("MongoDB connected");
 
-        app.use(cors());
+        app.use(cors({ exposedHeaders: "*" }));
         app.use(morgan("tiny"));
         app.use(cookieParser());
         app.use(bodyParser.json());
@@ -36,7 +36,7 @@ mongoose
         app.use("/cars", carsRouter);
         app.use("/users", usersRouter);
         app.use("/auth", authRouter);
-        app.use("/rents", rentsRouter)
+        app.use("/rents", rentsRouter);
 
         // STATIC ROUTES FOR REACT
         app.use(express.static(path.join(__dirname, "client/build")));
