@@ -37,11 +37,23 @@ const Login = () => {
         </Nav.Item>
       )}
       {userState.has_auth && (
-        <Nav.Item variant="primary">
-          <Nav.Link as={NavLink} to="/profile">
-            Profile
-          </Nav.Link>
-        </Nav.Item>
+        <>
+          <Nav.Item variant="primary">
+            <Nav.Link as={NavLink} to="/profile">
+              Profile
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item variant="primary">
+            <Nav.Link
+              onClick={(e) => {
+                e.preventDefault();
+                userDispatch({ type: "deauth_user" });
+              }}
+            >
+              Logout
+            </Nav.Link>
+          </Nav.Item>
+        </>
       )}
 
       <Modal show={show} onHide={handleClose}>

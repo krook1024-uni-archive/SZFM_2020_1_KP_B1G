@@ -63,6 +63,10 @@ const userReducer = (initialState, action) => {
       localStorage.clear();
       return Update({
         ...initialState,
+        user: null,
+        has_auth: false,
+        error_msg: '',
+        loading: false
       });
     default:
       return NoUpdate();
