@@ -3,6 +3,8 @@ const express = require("express"),
   passport = require("passport");
 
 const carController = require("../controllers/carController")();
+const carModel = require("../models/Car");
+const paginate = require("../middlewares/paginate");
 
 passport.use("admin", require("../controllers/authAdminStrategy.js"));
 
@@ -18,8 +20,8 @@ router.post(
 );
 
 //READ ALL
-router.get("/", (req, res) => {
-  carController.findAll().then((cars) => {
+router.get("/", paginate(carModel), (req, res) => {
+  carController.findAll(req.sorting).then((cars) => {
     res.json(cars);
   });
 });

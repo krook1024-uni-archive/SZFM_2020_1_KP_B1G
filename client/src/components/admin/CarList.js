@@ -12,7 +12,6 @@ export const CarList = (props) => {
   return (
     <List {...props}>
       <Datagrid>
-        <TextField source="id"></TextField>
         <TextField source="make"></TextField>
         <TextField source="plateNumber"></TextField>
         <TextField source="model"></TextField>
