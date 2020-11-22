@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useReducer } from "react";
 
-const UserStateContext = React.createContext();
-const UserDispatchContext = React.createContext();
+const UserStateContext = React.createContext("default");
+const UserDispatchContext = React.createContext("default");
 
 const login = async (username, password) => {
   const response = await axios.post("http://localhost:3004/auth/login/", null, {
@@ -55,7 +55,7 @@ const userReducer = (initialState, action) => {
   }
 };
 
-const UserProvider = ({ children }) => {
+const UserProvider = ({children}) => {
   const [state, dispatch] = useReducer(userReducer, {
     user: null,
     has_auth: false,
