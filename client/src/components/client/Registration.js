@@ -14,33 +14,32 @@ const Registration = () => {
   const licenseType = useRef();
   const licenseDate = useRef();
 
-  const validateForm = () => {
-    if (validateName(lastName.current.value, firstName.current.value)) {
-      console.log(
-        "Név: " + lastName.current.value + " " + firstName.current.value
-      );
-    }
-    if (validateEmail(email.current.value)) {
-      console.log("Email: " + email.current.value);
-    }
-    if (validatePassword(pwd.current.value)) {
-      console.log("Pwd: " + pwd.current.value);
-    }
-    if (validateLicenseType(licenseType.current.value)) {
-      console.log("License Type: " + licenseType.current.value);
-    }
-    if (validateLicenseDate(licenseDate.current.value)) {
-      console.log("License Date: " + licenseDate.current.value);
-    }
+  const sendForm = () => {
+    if (validateForm()) {
+      console.log("valid");
+    } else console.log("not valid");
   };
-  const validateName = (lastName, firstName) => {
-    if (lastName !== "" && lastName != null) {
-      if (firstName !== "" && firstName != null) return true;
-      else return false;
+
+  const validateForm = () => {
+    if (
+      validateName(firstName.current.value) &&
+      validateName(lastName.current.value) &&
+      validateEmail(email.current.value) &&
+      validatePassword(pwd.current.value) &&
+      validateLicenseType(licenseType.current.value) &&
+      validateLicenseDate(licenseDate.current.value)
+    )
+      return true;
+    else return false;
+  };
+  const validateName = (name) => {
+    var template = /([A-Za-zÉÁŰÚŐÓÜÖÍéáűúőóüöí]{2,30}$)/g;
+    if (template.test(name)) {
+      return true;
     } else return false;
   };
   const validateEmail = (email) => {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email));
   };
   const validatePassword = (password) => {
@@ -132,18 +131,12 @@ const Registration = () => {
                   name="pwd"
                   type="password"
                   placeholder="Password"
-                  id="inputPassword"
                   ref={pwd}
                 />
               </Form.Group>
               <Form.Group controlId="formLicenseType">
                 <Form.Label>Jogosítvány típusa</Form.Label>
-                <Form.Control
-                  as="select"
-                  id="inputLiceseType"
-                  name="licenseType"
-                  ref={licenseType}
-                >
+                <Form.Control as="select" name="licenseType" ref={licenseType}>
                   <option>-</option>
                   <option>AM</option>
                   <option>A1</option>
@@ -165,12 +158,7 @@ const Registration = () => {
               <Form.Group controlId="formLicenseDate">
                 <Form.Label>Jogosítvány megszerzés dátuma</Form.Label>
                 <br></br>
-                <input
-                  type="date"
-                  id="inputLicensedate"
-                  name="licenseDate"
-                  ref={licenseDate}
-                ></input>
+                <input type="date" name="licenseDate" ref={licenseDate}></input>
               </Form.Group>
             </Form>
           </Modal.Body>
@@ -179,7 +167,7 @@ const Registration = () => {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={validateForm}>
+            <Button variant="primary" onClick={sendForm}>
               Regisztráció
             </Button>
           </Modal.Footer>
