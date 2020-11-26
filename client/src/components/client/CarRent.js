@@ -95,7 +95,7 @@ const CarRent = ({ car }) => {
                   <Form.Control type="date" ref={rentEnd} />
                 </Form.Group>
                 <Form.Group>
-                  <Form.Label value={errorMsg}></Form.Label>
+                  <Form.Label></Form.Label>
                 </Form.Group>
               </Col>
               <Col>
