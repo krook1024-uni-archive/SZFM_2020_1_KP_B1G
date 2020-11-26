@@ -21,17 +21,24 @@ const Registration = () => {
       var userEmail = email.current.value;
       var userPassword = pwd.current.value;
       var userLicenseType = licenseType.current.value;
-      var userLicenseDate = licenseDate.current;
-      const user = {
+      var userLicenseDate = new Date(licenseDate.current.value);
+      var user = {
         userName,
         userEmail,
         userPassword,
         userLicenseDate,
         userLicenseType,
       };
-      axios.post("http://localhost:3004/auth/register", user).catch((error) => {
-        console.error("There was an error!", error);
-      });
+      axios
+        .post("http://localhost:3004/auth/register", user)
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.error("There was an error!", error);
+        });
+      console.log(user);
+      handleClose();
     } else console.log("not valid data");
   };
 
