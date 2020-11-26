@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Login from "../client/Login";
+import Registration from "./Registration";
 
 const NavBar = () => {
   return (
@@ -12,6 +13,7 @@ const NavBar = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
           <Login />
+          <Registration />
         </Nav>
       </Navbar.Collapse>
     </Navbar>
