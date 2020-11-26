@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import Col from "react-bootstrap/Col";
 import { Modal, Button, Form, Nav } from "react-bootstrap";
+import axios from "axios";
 
 const Registration = () => {
   const [show, setShow] = useState(false);
@@ -16,8 +17,22 @@ const Registration = () => {
 
   const sendForm = () => {
     if (validateForm()) {
-      console.log("valid");
-    } else console.log("not valid");
+      var userName = lastName.current.value + " " + firstName.current.value;
+      var userEmail = email.current.value;
+      var userPassword = pwd.current.value;
+      var userLicenseType = licenseType.current.value;
+      var userLicenseDate = licenseDate.current;
+      const user = {
+        userName,
+        userEmail,
+        userPassword,
+        userLicenseDate,
+        userLicenseType,
+      };
+      axios.post("http://localhost:3004/auth/register", user).catch((error) => {
+        console.error("There was an error!", error);
+      });
+    } else console.log("not valid data");
   };
 
   const validateForm = () => {
@@ -133,6 +148,9 @@ const Registration = () => {
                   placeholder="Password"
                   ref={pwd}
                 />
+                <Form.Text className="text-muted">
+                  Legalább 5 karakter
+                </Form.Text>
               </Form.Group>
               <Form.Group controlId="formLicenseType">
                 <Form.Label>Jogosítvány típusa</Form.Label>
