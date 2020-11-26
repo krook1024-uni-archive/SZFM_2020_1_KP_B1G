@@ -8,6 +8,7 @@ import {
   Row,
   ListGroup,
 } from "react-bootstrap";
+import axios from "axios";
 
 const CarRent = ({ car }) => {
   const [show, setShow] = useState(false);
@@ -17,15 +18,23 @@ const CarRent = ({ car }) => {
 
   const rentStart = useRef();
   const rentEnd = useRef();
-
   const rentCar = () => {
     if (periodValidation(rentStart.current.value, rentEnd.current.value)) {
       var dateStart = new Date(rentStart.current.value);
       var dateEnd = new Date(rentEnd.current.value);
+      var userId; //todo
+      var carId = car._id;
+      console.log(carId);
       const rent = {
+        carId,
+        userId,
         dateStart,
         dateEnd,
       };
+
+      axios.post("http://localhost:3004/", rent).catch((error) => {
+        console.error("There was an error!", error);
+      });
     } else console.log("Invalid dates");
   };
   const periodValidation = (dateStart, dateEnd) => {
@@ -84,6 +93,9 @@ const CarRent = ({ car }) => {
                 <Form.Group>
                   <Form.Label>Bérlés vége</Form.Label>
                   <Form.Control type="date" ref={rentEnd} />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label value={errorMsg}></Form.Label>
                 </Form.Group>
               </Col>
               <Col>
