@@ -19,23 +19,40 @@ const CarRent = ({ car }) => {
   const rentStart = useRef();
   const rentEnd = useRef();
   const rentCar = () => {
-    if (periodValidation(rentStart.current.value, rentEnd.current.value)) {
-      var dateStart = new Date(rentStart.current.value);
-      var dateEnd = new Date(rentEnd.current.value);
-      var userId; //todo
-      var carId = car._id;
-      console.log(carId);
-      const rent = {
-        carId,
-        userId,
-        dateStart,
-        dateEnd,
-      };
-
-      axios.post("http://localhost:3004/", rent).catch((error) => {
-        console.error("There was an error!", error);
-      });
-    } else console.log("Invalid dates");
+    if (
+      localStorage.getItem("_id") !== null &&
+      localStorage.getItem("_id") !== "" &&
+      localStorage.getItem("username") !== null &&
+      localStorage.getItem("password")
+    ) {
+      if (periodValidation(rentStart.current.value, rentEnd.current.value)) {
+        var startTime = new Date(rentStart.current.value);
+        var finishTime = new Date(rentEnd.current.value);
+        var userId = localStorage.getItem("_id");
+        var carId = car._id;
+        var username = localStorage.getItem("username");
+        var password = localStorage.getItem("password");
+        const rent = {
+          carId,
+          userId,
+          startTime,
+          finishTime,
+        };
+        axios
+          .post("http://localhost:3004/rents/", rent, {
+            auth: {
+              username,
+              password,
+            },
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.error("There was an error!", error);
+          });
+      } else console.log("Invalid dates");
+    } else console.log("pls log in");
   };
   const periodValidation = (dateStart, dateEnd) => {
     if (
