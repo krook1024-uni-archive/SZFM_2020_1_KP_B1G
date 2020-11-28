@@ -35,6 +35,31 @@ const carController = () => {
     }
   };
 
+  const findAllAvailable = async () => {
+    try {
+      const cars = await model
+        .aggregate([
+          {
+            $lookup: {
+              from: "rents",
+              localField: "_id",
+              foreignField: "carId",
+              as: "rented",
+            },
+          },
+          {
+            $match: {
+              rented: [],
+            },
+          },
+        ])
+        .exec();
+      return cars;
+    } catch (error) {
+      console.log("Cars not found");
+    }
+  };
+
   const updateOne = async (id, car) => {
     try {
       const value = new Car(car);
@@ -91,6 +116,7 @@ const carController = () => {
     findAll,
     updateOne,
     deleteOne,
+    findAllAvailable,
   };
 };
 
