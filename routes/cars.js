@@ -21,7 +21,7 @@ router.post(
 
 //READ ALL NOT RENTED
 router.get("/available", paginate(carModel), (req,res)=> {
-  carController.findAllAvailable().then((cars)=> {
+  carController.findAllAvailable(req.sorting).then((cars)=> {
     res.json(cars)
   })
 })

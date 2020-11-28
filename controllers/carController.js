@@ -35,8 +35,9 @@ const carController = () => {
     }
   };
 
-  const findAllAvailable = async () => {
+  const findAllAvailable = async (sorting = null) => {
     try {
+      const attr = { ...sorting };
       const cars = await model
         .aggregate([
           {
@@ -51,6 +52,15 @@ const carController = () => {
             $match: {
               rented: [],
             },
+          },
+          {
+            $sort: attr.sort,
+          },
+          {
+            $limit: attr.limit,
+          },
+          {
+            $skip: attr.skip,
           },
         ])
         .exec();

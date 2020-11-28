@@ -17,8 +17,7 @@ const HomePage = () => {
   useEffect(() => {
     let start = page >= 1 ? page * PER_PAGE : 0;
     let end = start + PER_PAGE - 1;
-   // const url = `http://localhost:3004/cars?_start=${start}&_end=${end}&_order=ASC&_sort=make`;
-    const url = "http://localhost:3004/cars/available"
+    const url = `http://localhost:3004/cars/available?_start=${start}&_end=${end}&_order=ASC&_sort=make`;
     axios
       .get(url)
       .then((response) => {
