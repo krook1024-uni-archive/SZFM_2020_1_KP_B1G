@@ -20,7 +20,7 @@ router.post(
 );
 
 //READ ALL NOT RENTED
-router.get("/available", (req,res)=> {
+router.get("/available", paginate(carModel), (req,res)=> {
   carController.findAllAvailable().then((cars)=> {
     res.json(cars)
   })
