@@ -9,8 +9,12 @@ import {
   ListGroup,
 } from "react-bootstrap";
 import axios from "axios";
+import { useUserState } from "../../context/user-context";
 
 const CarRent = ({ car }) => {
+  const userState = useUserState();
+  const user = userState.user || {};
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -19,16 +23,11 @@ const CarRent = ({ car }) => {
   const rentStart = useRef();
   const rentEnd = useRef();
   const rentCar = () => {
-    if (
-      localStorage.getItem("_id") !== null &&
-      localStorage.getItem("_id") !== "" &&
-      localStorage.getItem("username") !== null &&
-      localStorage.getItem("password")
-    ) {
-      if (periodValidation(rentStart.current.value, rentEnd.current.value)) {
-        var startTime = new Date(rentStart.current.value);
-        var finishTime = new Date(rentEnd.current.value);
-        var userId = localStorage.getItem("_id");
+    if (typeof user.id !== undefined) {
+      var startTime = new Date(rentStart.current.value);
+      var finishTime = new Date(rentEnd.current.value);
+      if (periodValidation(startTime, finishTime)) {
+        var userId = user.id;
         var carId = car._id;
         var username = localStorage.getItem("username");
         var password = localStorage.getItem("password");
@@ -55,35 +54,9 @@ const CarRent = ({ car }) => {
     } else console.log("pls log in");
   };
   const periodValidation = (dateStart, dateEnd) => {
-    if (
-      dateValidation(getCurrentDate(), dateStart) &&
-      dateValidation(dateStart, dateEnd)
-    )
-      return true;
-    else return false;
-  };
+    if (new Date() < dateStart) if (dateStart < dateEnd) return true;
 
-  const dateValidation = (dateStart, dateEnd) => {
-    const dateStartMembers = dateStart.split("-");
-    const dateEndMembers = dateEnd.split("-");
-    if (
-      dateStartMembers[0] <= dateEndMembers[0] &&
-      dateStartMembers[1] <= dateEndMembers[1] &&
-      dateStartMembers[2] < dateEndMembers[2]
-    )
-      return true;
-    else return false;
-  };
-  const getCurrentDate = (separator = "-") => {
-    let newDate = new Date();
-    let date = newDate.getDate();
-    let month = newDate.getMonth() + 1;
-    let year = newDate.getFullYear();
-
-    var now = `${year}${separator}${
-      month < 10 ? `0${month}` : `${month}`
-    }${separator}${date}`;
-    return now;
+    return false;
   };
 
   return (
