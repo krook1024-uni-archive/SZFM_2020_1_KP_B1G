@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Login from "../client/Login";
+import Registration from "./Registration";
 import {NavLink } from 'react-router-dom';
 
 const NavBar = () => {
@@ -18,6 +19,7 @@ const NavBar = () => {
             </Nav.Link>
           </Nav.Item>
           <Login />
+          <Registration />
         </Nav>
       </Navbar.Collapse>
     </Navbar>
