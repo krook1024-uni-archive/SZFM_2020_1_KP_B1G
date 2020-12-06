@@ -72,7 +72,7 @@ const Registration = () => {
           <Form.Group controlId="formLicenseDate">
             <Form.Label>Jogosítvány megszerzés dátuma</Form.Label>
             <br></br>
-            <input type="date" id="inputLicensedate" ref={licenseDate}></input>
+            <input type="date" id="inputLicensedate" ref={licenseDate} />
           </Form.Group>
         </Form>
       </Modal.Body>
