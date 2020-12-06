@@ -6,7 +6,6 @@ import { useUserState } from "../context/user-context";
 const Profile = () => {
   const userState = useUserState();
   const user = userState.user || {};
-  console.log(user);
   return (
     <>
       <NavBar />

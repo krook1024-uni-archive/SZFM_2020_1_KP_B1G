@@ -16,7 +16,6 @@ const CheckLogin = () => {
     const pass = localStorage.getItem("password");
 
     if (user && pass) {
-      console.log(user, pass);
       userDispatch({
         type: "auth_user",
         payload: { email: user, password: pass },

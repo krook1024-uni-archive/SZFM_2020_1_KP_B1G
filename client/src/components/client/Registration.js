@@ -37,7 +37,6 @@ const Registration = () => {
         .catch((error) => {
           console.error("There was an error!", error);
         });
-      console.log(user);
       handleClose();
     } else console.log("not valid data");
   };
