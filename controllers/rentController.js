@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const Rent = require("../models/Rent");
 const model = require("../models/Rent");
 
@@ -31,6 +32,17 @@ const rentController = () => {
       return rents;
     } catch (error) {
       console.log("No rents found.");
+    }
+  };
+
+  const findByUserId = async (userId) => {
+    try {
+      const rents = await model
+        .find({ userId: mongoose.Types.ObjectId(userId) })
+        .exec();
+      return rents;
+    } catch (error) {
+      console.log("No rents found with this id.");
     }
   };
 
@@ -83,6 +95,7 @@ const rentController = () => {
     findAll,
     updateOne,
     deleteOne,
+    findByUserId
   };
 };
 

@@ -2,8 +2,8 @@ const express = require("express"),
   router = express.Router(),
   passport = require("passport");
 
-const rentModel = require('../models/Rent');
-const paginate = require('../middlewares/paginate');
+const rentModel = require("../models/Rent");
+const paginate = require("../middlewares/paginate");
 
 const rentController = require("../controllers/rentController")();
 
@@ -40,6 +40,18 @@ router.get(
   (req, res) => {
     const id = req.params.id;
     rentController.findOne(id).then((rent) => {
+      res.json(rent);
+    });
+  }
+);
+
+// READ ALL WITH USERID
+router.get(
+  "/uid/:userid",
+  passport.authenticate("admin", { session: false }),
+  (req, res) => {
+    const userId = req.params.userid;
+    rentController.findByUserId(userId).then((rent) => {
       res.json(rent);
     });
   }
