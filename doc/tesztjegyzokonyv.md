@@ -92,6 +92,92 @@ Ha valid id-jű autót törlünk és autentikáció is van az autó az elvárás
 ![car_delete](img/car_del3.jpg)
 
 
+### User Endpoints 
+*(Tóth Csaba)*
+
+**GET REQUEST**
+
+**Elvárások**: 
+
++ A válasz kilistázza az adatbázisban található felhasználókat 
++ Az User modellnek megfelelő adatokat kapunk 
++ Autentikáció nélkül nem működik
+
+**Eredmények**
+
+Autentikáció hiányában válaszként egy 401-es Unathorized Status code-ot kapunk. 
+
+![user_get](img/user_get.jpg)
+
+Ha van autentikáció a sémának megfelelő adatokkal kilistázza a felhasználókat. 
+
+![user_get2](img/user_get2.jpg)
+
+**POST REQUEST**
+
+**Elvárások**
+
++ A hozzáadott user kerüljön be az adatbázisba 
++ A sémának nem megfelelő user ne kerüljön be az adatbázisba 
++ Autentikáció nélkül ne lehessen user-t hozzádni 
+
+**Eredmények**
+
+**Eredmények**
+
+Autentikáció hiányában válaszként egy 401-es Unathorized Status code-ot kapunk. 
+
+![user_get](img/user_put.jpg)
+
+Ha nem a sémának megelelő user-t küldünk, nem kerül be az adatbázisba. 
+
+![user_get2](img/user_post.jpg)
+
+Ha van autentikáció a user a sémának megfelelő az új user az elvártnak megfelelően bekrül az adatbázisba. 
+
+![user_post](img/user_post2.jpg)
+
+**PUT REQUEST**
+
+**Elvárások**
++ Csak autentikációval rendelkező user által hajtható végre
++ Csak valid id-val rendelkező usert lehet update-elni.  
+
+**Eredmények**
+
+Autentikáció hiányában válaszként egy 401-es Unathorized Status code-ot kapunk. 
+
+![user_put](img/user_put1.jpg)
+
+Nem valid id-val rendelkező user-t nem lehet update-elni. 
+
+![user_put](img/user_put2.jpg)
+
+Ha valid id-val rendlkező user-t akarunk frissíteni, illetve rendlkezünk admin autentikációval, akkor megfelelően működik. 
+
+![user_put](img/user_put3.jpg)
+
+**DELETE REQUEST**
+
+**Elvárások**
++ Csak admin autentikációval rendlkező felhasználó törölhet 
++ Csak valid id-val rendelkező felhasználót lehet törölni. 
+
+**Eredmények**
+
+Autentikáció hiányában válaszként egy 401-es Unathorized Status code-ot kapunk. 
+
+![user_delete](img/user_delete1.jpg)
+
+Nem valid id-val rendelkező user-t nem lehet törölni. 
+
+![user_delete](img/user_delete2.jpg)
+
+Ha van admin autentikációja a user-nek illetve a törölni kívánt user id-ja létezik akkor megfelelően működik. 
+
+![user_delete](img/user_delete3.jpg)
+
+
 
 
 
