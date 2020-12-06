@@ -13,7 +13,7 @@ const Registration = () => {
   const email = useRef();
   const pwd = useRef();
   const licenseType = useRef();
-  const licenseDate = useRef();
+  const birthDate = useRef();
 
   const sendForm = () => {
     if (validateForm()) {
@@ -21,13 +21,13 @@ const Registration = () => {
       var userEmail = email.current.value;
       var userPassword = pwd.current.value;
       var userLicenseType = licenseType.current.value;
-      var userLicenseDate = new Date(licenseDate.current.value);
+      var userBirthDate = new Date(birthDate.current.value);
       var user = {
-        userName,
-        userEmail,
-        userPassword,
-        userLicenseDate,
-        userLicenseType,
+        name: userName,
+        email: userEmail,
+        password: userPassword,
+        dateOfBirth: userBirthDate,
+        licenseCategory: userLicenseType,
       };
       axios
         .post("http://localhost:3004/auth/register", user)
@@ -49,7 +49,7 @@ const Registration = () => {
       validateEmail(email.current.value) &&
       validatePassword(pwd.current.value) &&
       validateLicenseType(licenseType.current.value) &&
-      validateLicenseDate(licenseDate.current.value)
+      validateBirthDate(birthDate.current.value)
     )
       return true;
     else return false;
@@ -72,7 +72,7 @@ const Registration = () => {
     if (type === "-") return false;
     else return true;
   };
-  const validateLicenseDate = (date) => {
+  const validateBirthDate = (date) => {
     var licenseDates = date.split("-");
     var nowDates = getCurrentDate().split("-");
     var licenseYear = licenseDates[0];
@@ -181,9 +181,9 @@ const Registration = () => {
                 </Form.Control>
               </Form.Group>
               <Form.Group controlId="formLicenseDate">
-                <Form.Label>Jogosítvány megszerzés dátuma</Form.Label>
+                <Form.Label>Születés dátuma</Form.Label>
                 <br></br>
-                <input type="date" name="licenseDate" ref={licenseDate}></input>
+                <input type="date" name="licenseDate" ref={birthDate}></input>
               </Form.Group>
             </Form>
           </Modal.Body>
