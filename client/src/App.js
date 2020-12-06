@@ -8,7 +8,6 @@ import Profile from "./pages/Profile";
 
 import { useUserState, useUserDispatch } from "./context/user-context";
 const CheckLogin = () => {
-  const userState = useUserState();
   const userDispatch = useUserDispatch();
 
   useEffect(() => {
