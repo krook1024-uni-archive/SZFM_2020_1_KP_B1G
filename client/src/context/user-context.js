@@ -21,6 +21,7 @@ const login = async (username, password) => {
   });
   return new Promise((resolve, reject) => {
     try {
+      localStorage.setItem("id", response.data.id);
       localStorage.setItem("username", response.data.email);
       localStorage.setItem("password", response.data.password);
       resolve(response.data);
@@ -65,8 +66,8 @@ const userReducer = (initialState, action) => {
         ...initialState,
         user: null,
         has_auth: false,
-        error_msg: '',
-        loading: false
+        error_msg: "",
+        loading: false,
       });
     default:
       return NoUpdate();
