@@ -300,3 +300,81 @@ törlésre kerülnek.
 
 A "Close" gomb megnyomásával sikeresen kilépünk a bejelentkezési felületből.
 Viszont a beírt adatok megmaradnak ha újra a bejelentkezésre kattintunk.
+
+## Admin Manual Testing
+
+### Tesztelés menetéről
+*(Czinke Márton)*
+
+A tesztelés során weboldalunk admin felületét tesztelem. 
+A tesztelés manuálisan fog megtörténni.
+
+**Bejelentkezés megfelelő joggal rendelkező felhasználóval**
+
+**Elvárások**:
+
+A felhsználó a /admin oldalon történő bejelentkezés után sikeresen megérkezik a az admin felületre.
+
+**Eredmények**
+
+A felhasználó sikeresen bejelentkezett és látja az admin oldalt.
+
+**Bejelentkezés nem megfelelő jogggal rendelkező felhasználóval**
+
+**Elvárások**:
+
+A felhasználó nem tud bejelentkezni, hiba üzenetet küld vissza az oldal.
+
+**Eredmények**
+
+A felhasználót nem enegedi tobvább az oldal és nem hitelesített hibaüzenettel tér vissza.
+
+**User-ek listázása**
+
+**Elvárások**:
+
+A regisztrált, adatbázisban megtalálható emberek és adataik listázása.
+
+**Eredmények**
+
+Az összes felhasználó listázása neveik, emailjeik, regisztrálásuk dátuma.
+
+**User hozzáadása**
+
+**Elvárások**
+
+A megadott adatok alapján új felhsználó beszúrása az adatbázisba.
+
+**Eredmények**
+
+A megadott adatok alapján sikeresen beillesztette és megjelent az új User.
+
+**Autók-ek listázása**
+
+**Elvárások**
+
+Az összes autó listázása az adatbázisból.
+
+**Eredmények**
+
+Az összes autó listázásra került az adatbázisból.
+
+**Bérlések-ek listázása**
+
+**Elvárások**
+
+Az összes bérlés listázása az adatbázisból.
+
+**Eredmények**
+
+Az összes bérlés listázásra került az adatbázisból.
+
+**Autók-k létrhozása**
+
+**Elvárások**
+
+A megadott adatok alpján új autó létrehozása az adatbázisban és listása.
+
+**Eredmények**
+
+Az új autó bekerült az adatbázisba és listázásra is került.
