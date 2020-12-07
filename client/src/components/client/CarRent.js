@@ -46,6 +46,7 @@ const CarRent = ({ car }) => {
           })
           .then(function (response) {
             console.log(response);
+            handleClose();
           })
           .catch((error) => {
             console.error("There was an error!", error);

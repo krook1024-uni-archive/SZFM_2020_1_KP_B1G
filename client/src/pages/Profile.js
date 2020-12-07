@@ -11,17 +11,25 @@ const ProfileCars = ({ rents }) => {
   const [userCars, setUserCars] = useState([]);
 
   useEffect(() => {
+    const fetchStuff = () => {
+      let cars = [];
+      rents.forEach(async (rent) => {
+        let car = {
+          from: rent.startTime,
+          to: rent.finishTime,
+        };
+
+        let carLive = await axios.get(
+          "http://localhost:3004/cars/" + rent.carId
+        );
+        cars.push({ ...car, ...carLive });
+      });
+      return cars;
+    };
+
     setLoading(true);
-    rents.forEach(async (rent) => {
-      let car = {
-        from: rent.startTime,
-        to: rent.finishTime,
-      };
-
-      let carLive = await axios.get("http://localhost:3004/cars/" + rent.carId);
-
-      setUserCars([...userCars, { ...car, ...carLive.data }]);
-    });
+    const stuff = fetchStuff();
+    setUserCars(stuff);
     setLoading(false);
   }, [rents]);
 
@@ -29,13 +37,13 @@ const ProfileCars = ({ rents }) => {
 
   return userCars.map((car) => {
     return (
-      <>
+      <React.Fragment key={car.id}>
         <strong>From: {new Date(car.from).toString()}</strong>
         <br />
         <strong>To: {new Date(car.to).toString()}</strong>
         <Car car={car} key={car.id} hideButton={true} />
         <hr />
-      </>
+      </React.Fragment>
     );
   });
 };
@@ -51,8 +59,6 @@ const Profile = () => {
       userDispatch({ type: "get_rents", payload: { id: user.id } });
     }
   }, [userDispatch, user.id]);
-
-  const rents = userState.rents || {};
 
   return (
     <>
@@ -78,7 +84,7 @@ const Profile = () => {
         </div>
         <h2>My rents</h2>
         <div>
-          <ProfileCars rents={rents} />
+          <ProfileCars rents={userState.rents} />
         </div>
       </Container>
     </>
