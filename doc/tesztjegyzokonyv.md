@@ -207,6 +207,8 @@ A belépés hiba nélkül működik.
 
 A belépés hibás/nem megfelelő adatokkal nem lehetséges.
 
+![login_hibas_adatok](img/login_hibas_adatok.png)
+
 **Párhuzamos bejelentkezés több böngészőből más felhasználóval**
 
 **Elvárások**:
@@ -250,6 +252,8 @@ bejelentkezési mezőkből az oldal újratöltése nélkül.
 
 A bejelentkezési adatok nem kerülnek törlésre a bejelentkezési mezőkből.
 
+![login_bejelentkezesi_adatok_nem_torlodnek](img/login_bejelentkezesi_adatok_nem_torlodnek.png)
+
 **A Login Page (bejelentkezési lap) megfelel a képernyőterveknek/egységes dizájnnak**
 
 **Elvárások**:
@@ -271,6 +275,8 @@ A Login Page megfelel az elvárásoknak.
 **Eredmények**
 
 A mezőbe beírt karakterek kitakarásra kerülnek.
+
+![login_jelszo_kitakaras](img/login_jelszo_kitakaras.png)
 
 **Belépés az "Enter" billentyű segítségével**
 
