@@ -3,22 +3,24 @@
 ## API Endpointok manuális tesztelése
 
 ### Tesztelés menetéről
-*(Tóth Csaba)*
+
+_(Tóth Csaba)_
 
 A tesztelés során a Backend API Endpoint-jaira alkalmazok HTTP kéréseket
 a [Postman](https://www.postman.com/) alklamazással.
 A teszt során a car, user, rent endpointok lesznek tesztelve.
 
 ### Car Endpoints
-*(Tóth Csaba)*
+
+_(Tóth Csaba)_
 
 **GET REQUEST**
 
 **Elvárások**:
 
-+ A válasz kilistázza az adatbázisban található autókat
-+ Az Car modellnek megfelelő adatokat kapunk
-+ Autentikáció nélkül is működik
+- A válasz kilistázza az adatbázisban található autókat
+- Az Car modellnek megfelelő adatokat kapunk
+- Autentikáció nélkül is működik
 
 **Eredmények**
 
@@ -30,13 +32,13 @@ A működés az elvártnak megfelelő.
 
 **Elvárások**
 
-+ A hozzáadott autó kerüljön be az adatbázisba
-+ A sémának nem megfelelő autó ne kerüljön be az adatbázisba
-+ Autentikáció nélkül ne lehessen autót hozzadni
+- A hozzáadott autó kerüljön be az adatbázisba
+- A sémának nem megfelelő autó ne kerüljön be az adatbázisba
+- Autentikáció nélkül ne lehessen autót hozzadni
 
 **Eredménnyek**
 
-A működés az elvártnak megelelő  
+A működés az elvártnak megelelő
 
 Autentikáció hiányában válaszként egy 401-es Unathorized Status code-ot kapunk.
 
@@ -54,8 +56,9 @@ az autó sikeresen felkerül az adatbázisba.
 **PUT REQUEST**
 
 **Elvárások**
-+ Csak autentikációval rendelkező user által hajtható végre
-+ Csak valid id-val rendelkező autót lehet update-elni.
+
+- Csak autentikációval rendelkező user által hajtható végre
+- Csak valid id-val rendelkező autót lehet update-elni.
 
 **Eredmények**
 
@@ -74,8 +77,9 @@ Ha valid id-jű autót update-elünk a sémának megfelelően és autentikáció
 **DELETE REQUEST**
 
 **Elvárások**
-+ Csak valid id-val rendelkező autót lehessen törölni
-+ Csak autentkációval rendelkező user törölhessen
+
+- Csak valid id-val rendelkező autót lehessen törölni
+- Csak autentkációval rendelkező user törölhessen
 
 **Eredmények**
 
@@ -91,17 +95,17 @@ Ha valid id-jű autót törlünk és autentikáció is van az autó az elvárás
 
 ![car_delete](img/car_del3.jpg)
 
-
 ### User Endpoints
-*(Tóth Csaba)*
+
+_(Tóth Csaba)_
 
 **GET REQUEST**
 
 **Elvárások**:
 
-+ A válasz kilistázza az adatbázisban található felhasználókat
-+ Az User modellnek megfelelő adatokat kapunk
-+ Autentikáció nélkül nem működik
+- A válasz kilistázza az adatbázisban található felhasználókat
+- Az User modellnek megfelelő adatokat kapunk
+- Autentikáció nélkül nem működik
 
 **Eredmények**
 
@@ -117,9 +121,9 @@ Ha van autentikáció a sémának megfelelő adatokkal kilistázza a felhasznál
 
 **Elvárások**
 
-+ A hozzáadott user kerüljön be az adatbázisba
-+ A sémának nem megfelelő user ne kerüljön be az adatbázisba
-+ Autentikáció nélkül ne lehessen user-t hozzádni
+- A hozzáadott user kerüljön be az adatbázisba
+- A sémának nem megfelelő user ne kerüljön be az adatbázisba
+- Autentikáció nélkül ne lehessen user-t hozzádni
 
 **Eredmények**
 
@@ -140,8 +144,9 @@ Ha van autentikáció a user a sémának megfelelő az új user az elvártnak me
 **PUT REQUEST**
 
 **Elvárások**
-+ Csak autentikációval rendelkező user által hajtható végre
-+ Csak valid id-val rendelkező usert lehet update-elni.  
+
+- Csak autentikációval rendelkező user által hajtható végre
+- Csak valid id-val rendelkező usert lehet update-elni.
 
 **Eredmények**
 
@@ -160,8 +165,9 @@ Ha valid id-val rendlkező user-t akarunk frissíteni, illetve rendlkezünk admi
 **DELETE REQUEST**
 
 **Elvárások**
-+ Csak admin autentikációval rendlkező felhasználó törölhet
-+ Csak valid id-val rendelkező felhasználót lehet törölni.
+
+- Csak admin autentikációval rendlkező felhasználó törölhet
+- Csak valid id-val rendelkező felhasználót lehet törölni.
 
 **Eredmények**
 
@@ -177,12 +183,11 @@ Ha van admin autentikációja a user-nek illetve a törölni kívánt user id-ja
 
 ![user_delete](img/user_delete3.jpg)
 
-
-
 ## Login (bejelentkezés) manuális tesztelése
 
 ### Tesztelés menetéről
-*(Füleky László)*
+
+_(Füleky László)_
 
 A tesztelés során weboldalunk bejelentkezési oldalát (Login Page) fogom
 letesztelni. A tesztelés manuálisan fog megtörténni.
@@ -191,7 +196,7 @@ letesztelni. A tesztelés manuálisan fog megtörténni.
 
 **Elvárások**:
 
-+ A felhasználó megfelelően, hiba nélkül be tud lépni a bejelentkezési adataival.
+- A felhasználó megfelelően, hiba nélkül be tud lépni a bejelentkezési adataival.
 
 **Eredmények**
 
@@ -201,7 +206,7 @@ A belépés hiba nélkül működik.
 
 **Elvárások**:
 
-+ A felhasználó hibás adatokkal nem léphet be.
+- A felhasználó hibás adatokkal nem léphet be.
 
 **Eredmények**
 
@@ -213,7 +218,7 @@ A belépés hibás/nem megfelelő adatokkal nem lehetséges.
 
 **Elvárások**:
 
-+ A felhasználó képes belépni több böngészőből, több felhasználóval egyszerre.
+- A felhasználó képes belépni több böngészőből, több felhasználóval egyszerre.
 
 **Eredmények**
 
@@ -224,7 +229,7 @@ egyidejűleg.
 
 **Elvárások**:
 
-+ A felhasználó több böngészőből ne legyen képes ugyan azon felhasználó bejelentkezésére.
+- A felhasználó több böngészőből ne legyen képes ugyan azon felhasználó bejelentkezésére.
 
 **Eredmények**
 
@@ -234,8 +239,8 @@ Lehetséges a bejelentkezés ugyan azon felhasználó számára több böngész�
 
 **Elvárások**:
 
-+ A felhasználó sikertelen bejelentkezése után az adatok törlésre kerülnek a
-bejelentkezési mezőkből az oldal újratöltése után.
+- A felhasználó sikertelen bejelentkezése után az adatok törlésre kerülnek a
+  bejelentkezési mezőkből az oldal újratöltése után.
 
 **Eredmények**
 
@@ -245,8 +250,8 @@ A bejelentkezési adatok törlésre kerülnek a bejelentkezési mezőkből.
 
 **Elvárások**:
 
-+ A felhasználó sikertelen bejelentkezése után az adatok törlésre kerülnek a
-bejelentkezési mezőkből az oldal újratöltése nélkül.
+- A felhasználó sikertelen bejelentkezése után az adatok törlésre kerülnek a
+  bejelentkezési mezőkből az oldal újratöltése nélkül.
 
 **Eredmények**
 
@@ -258,8 +263,8 @@ A bejelentkezési adatok nem kerülnek törlésre a bejelentkezési mezőkből.
 
 **Elvárások**:
 
-+ A Login Page megfelel az elvárt kinézetnek (font, stílus, színpaletta), illetve
-a képernyőtervnek is megfelel.
+- A Login Page megfelel az elvárt kinézetnek (font, stílus, színpaletta), illetve
+  a képernyőtervnek is megfelel.
 
 **Eredmények**
 
@@ -269,8 +274,8 @@ A Login Page megfelel az elvárásoknak.
 
 **Elvárások**:
 
-+ Bejelentkezéskor a "Jelszó" mezőbe beírt karakterek kitakarásra kerülnek a
-(*) karakterrel.
+- Bejelentkezéskor a "Jelszó" mezőbe beírt karakterek kitakarásra kerülnek a
+  (\*) karakterrel.
 
 **Eredmények**
 
@@ -282,7 +287,7 @@ A mezőbe beírt karakterek kitakarásra kerülnek.
 
 **Elvárások**:
 
-+ A belépési adatok beírása után lehetséges a belépés az "Enter" billentyű leütésével.
+- A belépési adatok beírása után lehetséges a belépés az "Enter" billentyű leütésével.
 
 **Eredmények**
 
@@ -292,11 +297,80 @@ Az "Enter" billentyű megfelelően működik bejelentkezéskor.
 
 **Elvárások**:
 
-+ Miután beírjuk az adataink, és mégsem kívánunk belépni, a "Close" gomb
-megnyomásával sikeresen kilépünk a bejelentkezési felületből és a beírt adatok
-törlésre kerülnek.
+- Miután beírjuk az adataink, és mégsem kívánunk belépni, a "Close" gomb
+  megnyomásával sikeresen kilépünk a bejelentkezési felületből és a beírt adatok
+  törlésre kerülnek.
 
 **Eredmények**
 
 A "Close" gomb megnyomásával sikeresen kilépünk a bejelentkezési felületből.
 Viszont a beírt adatok megmaradnak ha újra a bejelentkezésre kattintunk.
+
+## Rent Endpoints
+
+_(Molnar Antal)_
+
+### Osszes lekerdezese (GET)
+
+#### Elvaras
+
+- Csak a felhasznalo berleseit adja vissza.
+- Authentikacio szukseges
+
+### Eredmeny
+
+![](img/rents_get_all.png)
+
+Sikeresen teljesiti az elvarasokat.
+
+### 1 db lekerdezese (GET ONE)
+
+#### Elvaras
+
+- Semanak megfeleloen adja vissza a berles adatait.
+- Authentikacio szukseges.
+
+#### Eredmeny
+
+![](img/rents_get_one.png)
+
+Sikeresen teljesiti az elvarasokat.
+
+### Felhasznalo szerinti lekerdezes
+
+#### Elvaras
+
+- Csak a felhasznalo berleseit adja vissza.
+- Authentikacio szukseges.
+
+#### Eredmeny
+
+![](img/rents_get_by_user.png)
+
+Sikeresen teljesiti a kovetelmenyeket.
+
+### Frissites
+
+#### Elvaras
+
+- Authentikacio szukseges
+- Megfeleloen hozzaadja a rents kollekcioba a felvitt adatokat.
+
+#### Eredmeny
+
+![](img/rents_put_one.png)
+
+Sikeresen teljesiti a kovetelmenyeket.
+
+### Felhasznalo szerinti lekerdezes
+
+#### Elvaras
+
+- Csak a felhasznalo berleseit adja vissza.
+- Authentikacio szukseges.
+
+#### Eredmeny
+
+![](img/rents_get_by_user.png)
+
+Sikeresen teljesiti a kovetelmenyeket.
