@@ -2,8 +2,12 @@ import React, { useState, useRef } from "react";
 import Col from "react-bootstrap/Col";
 import { Modal, Button, Form, Nav } from "react-bootstrap";
 import axios from "axios";
+import { useUserState } from "../../context/user-context";
 
 const Registration = () => {
+  const userState = useUserState();
+  const has_auth = userState.has_auth || false;
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -99,6 +103,10 @@ const Registration = () => {
       month < 10 ? `0${month}` : `${month}`
     }${separator}${date}`;
     return now;
+  }
+
+  if (has_auth) {
+    return null;
   }
 
   return (

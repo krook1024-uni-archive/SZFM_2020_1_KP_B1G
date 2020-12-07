@@ -5,8 +5,8 @@ import { UserProvider } from "./context/user-context";
 import AdminPage from "./pages/AdminPage";
 import HomePage from "./pages/HomePage";
 import Profile from "./pages/Profile";
+import { useUserDispatch } from "./context/user-context";
 
-import { useUserState, useUserDispatch } from "./context/user-context";
 const CheckLogin = () => {
   const userDispatch = useUserDispatch();
 

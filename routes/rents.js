@@ -81,6 +81,18 @@ router.delete(
   }
 );
 
+// USER GET ALL
+router.get(
+  "/user/:userId",
+  passport.authenticate("basic", { session: false }),
+  (req, res) => {
+    const userId = req.params.userId;
+    rentController.findByUserId(userId).then((rents) => {
+      res.json(rents);
+    });
+  }
+);
+
 // USER DELETE ONE
 // olyan route, ahova szimpla user is kuldhet requestet, viszont csak a sajatjat
 // tudja torolni, es csak akkor, ha 3 nap vagy tobb mulva kezdodne a berles

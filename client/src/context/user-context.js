@@ -12,6 +12,24 @@ const UserDispatchContext = React.createContext("default");
 UserStateContext.displayName = "UserStateContext";
 UserDispatchContext.displayName = "UserDispatchContext";
 
+const getRents = async (userId) => {
+  const username = localStorage.getItem("username");
+  const password = localStorage.getItem("password");
+  const response = await axios.get(
+    "http://localhost:3004/rents/user/" + userId,
+    {
+      auth: { username, password },
+    }
+  );
+  return new Promise((resolve, reject) => {
+    try {
+      resolve(response.data);
+    } catch (err) {
+      reject("Couldn't get users rents");
+    }
+  });
+};
+
 const login = async (username, password) => {
   const response = await axios.post("http://localhost:3004/auth/login/", null, {
     auth: {
@@ -21,7 +39,6 @@ const login = async (username, password) => {
   });
   return new Promise((resolve, reject) => {
     try {
-      localStorage.setItem("id", response.data.id);
       localStorage.setItem("username", response.data.email);
       localStorage.setItem("password", response.data.password);
       resolve(response.data);
@@ -50,6 +67,21 @@ const userReducer = (initialState, action) => {
         has_auth: true,
         error_msg: "",
         loading: false,
+      });
+    case "get_rents":
+      return SideEffect((_, dispatch) => {
+        getRents(action.payload.id || -1)
+          .then((resp) => {
+            dispatch({ type: "set_rents", payload: resp });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      });
+    case "set_rents":
+      return Update({
+        ...initialState,
+        rents: action.payload,
       });
     case "fail_user": {
       return {
@@ -80,6 +112,7 @@ const UserProvider = ({ children }) => {
     has_auth: false,
     error_msg: "",
     loading: true,
+    rents: [],
   });
 
   return (
